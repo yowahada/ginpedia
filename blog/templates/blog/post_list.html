@@ -1,15 +1,25 @@
+{% load staticfiles %}
 <html>
-	<head><!DOCTYPE html>
+	<head>
+		<!DOCTYPE html>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<!--<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />-->
+		<link rel="stylesheet" type="text/css" href="static/basic.css">
+		<link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
 		<title>Ginpedia</title>
+    </style>
+    
+    
+
 	</head>
 	<body>
 		<div align="center">
 			<h1>Ginpedia</h1>
 		</div>
-		<div>
+		<div align="center">
 			{% for post in posts %}
 				<p><a href="">{{ post.title }}</a></p>
-        		<p>{{ post.text|linebreaks }}</p>
+        		<p>{{ post.text }}</p>
 			{% endfor %}
 		</div>
 	</body>
