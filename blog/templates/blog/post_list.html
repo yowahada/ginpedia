@@ -3,14 +3,14 @@
 		<title>Ginpedia</title>
 	</head>
 	<body>
-		<div>
+		<div align="center">
 			<h1>Ginpedia</h1>
 		</div>
 		<div>
-			<p>text</p>
-			<p>text</p>
-			<p>text</p>
-			<p>text</p>
+			{% for post in posts %}
+				<p><a href="">{{ post.title }}</a></p>
+        		<p>{{ post.text|linebreaks }}</p>
+			{% endfor %}
 		</div>
 	</body>
 </html>
