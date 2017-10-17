@@ -136,7 +136,12 @@ ALLOWED_HOSTS = ['*']
 
 
 
-DEBUG = False
+# Set DEBUG = True if on the production server
+if socket.gethostname() == 'https://ginpedia.herokuapp.com/':
+    DEBUG = False
+else:
+    DEBUG = True
+
 
 try:
     from .local_settings import *
