@@ -135,13 +135,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 
-
-# Set DEBUG = True if on the production server
-if socket.gethostname() == 'https://ginpedia.herokuapp.com/':
-    DEBUG = False
-else:
-    DEBUG = True
-
+DEBUG = False
 
 try:
     from .local_settings import *
