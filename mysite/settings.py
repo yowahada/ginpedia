@@ -14,7 +14,6 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -118,20 +117,20 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 #collectstatic を使うときに、静的コンテンツを置いているディレクトリへの絶対パスを指定します。
+#本番環境でのみ利用される。nginxで静的ファイルを配信したい場合など。manage.py collectstaticによって静的ファイルがここにコピーされる。
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #開発モードでSTATIC_ROOT から配信されたファイルを処理するためのURL
 STATIC_URL = '/static/'
 
 #ファイルディレクトリのフルパスの文字列をリストかタプルとして設定
+#test環境はここのファイルを読みにいってる
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), 
 )
-#ここハマった
-
 
 #管理コマンドで静的ファイルを集めるときに使うファイルストレージエンジン
 #STATICFILES_STORAGE =  'whitenoise.django.GzipManifestStaticFilesStorage'
