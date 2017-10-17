@@ -28,13 +28,13 @@ h2 span::before {
 h2 span::after {
   left: 100%;
 }
-/*div {
+div {
   display: block;
-  font-size: 15px;
+  font-size: 12px;
   font-family: "Sawarabi Mincho";
   font-style: normal;
   font-weight: 400;
-}*/
+}
 #main {
     padding-top: 23px;
     padding-bottom: 20px;
