@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -118,25 +118,29 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+#collectstatic を使うときに、静的コンテンツを置いているディレクトリへの絶対パスを指定します。
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+#開発モードでSTATIC_ROOT から配信されたファイルを処理するためのURL
 STATIC_URL = '/static/'
 
+#ファイルディレクトリのフルパスの文字列をリストかタプルとして設定
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, "static"), 
+    os.path.join(BASE_DIR, "static"), 
 )
+#ここハマった
 
-STATICFILES_STORAGE =  'whitenoise.django.GzipManifestStaticFilesStorage'
+
+#管理コマンドで静的ファイルを集めるときに使うファイルストレージエンジン
+#STATICFILES_STORAGE =  'whitenoise.django.GzipManifestStaticFilesStorage'
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 ALLOWED_HOSTS = ['*']
-
 DEBUG = False
 
 try:

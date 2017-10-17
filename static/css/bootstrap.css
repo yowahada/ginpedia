@@ -6755,3 +6755,12 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+@media screen and (max-width: 1190px)
+_custom816.scss:188
+.inner-wrap {
+    width: 94%;
+}
+.inner-wrap {
+    margin: 0 auto;
+    max-width: 1140px;
+}
