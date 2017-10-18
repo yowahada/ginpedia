@@ -28,6 +28,7 @@ h2 span::before {
 h2 span::after {
   left: 100%;
 }
+/*
 div {
   display: block;
   font-size: 12px;
@@ -40,6 +41,7 @@ div {
     padding-bottom: 20px;
     background-color: #ffffff;
 }
+
 @media screen and (max-width: 1190px)
 _custom816.scss:188
 .inner-wrap {
@@ -51,4 +53,4 @@ _custom816.scss:188
 }
 .clearfix {
     display: block;
-}
+}*/
