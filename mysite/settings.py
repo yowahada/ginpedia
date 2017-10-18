@@ -137,7 +137,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), 
 )
 
-#管理コマンドで静的ファイルを集めるときに使うファイルストレージエンジン
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE =  'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 import dj_database_url
