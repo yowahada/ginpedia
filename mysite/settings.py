@@ -143,6 +143,7 @@ STATIC_URL = '/static/'
 #test環境はここのファイルを読みにいってる
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), 
+    os.path.join(BASE_DIR, "staticfiles"), 
 )
 
 import dj_database_url
