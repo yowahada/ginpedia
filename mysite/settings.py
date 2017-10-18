@@ -135,11 +135,10 @@ STATIC_URL = '/static/'
 #test環境はここのファイルを読みにいってる
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), 
-    os.path.join(BASE_DIR, 'staticfiles'),
 )
 
 #管理コマンドで静的ファイルを集めるときに使うファイルストレージエンジン
-STATICFILES_STORAGE =  'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE =  'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
