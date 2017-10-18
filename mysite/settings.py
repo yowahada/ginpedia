@@ -142,7 +142,7 @@ STATIC_URL = '/static/'
 #ファイルディレクトリのフルパスの文字列をリストかタプルとして設定
 #test環境はここのファイルを読みにいってる
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "staticfiles"), 
+    os.path.join(BASE_DIR, "static"), 
 )
 
 import dj_database_url
@@ -151,7 +151,7 @@ DATABASES['default'].update(db_from_env)
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
-DEBUG = False
+DEBUG = True
 
 try:
     from .local_settings import *
