@@ -142,7 +142,6 @@ STATIC_URL = '/static/'
 #ファイルディレクトリのフルパスの文字列をリストかタプルとして設定
 #test環境はここのファイルを読みにいってる
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"), 
     os.path.join(BASE_DIR, "staticfiles"), 
 )
 
