@@ -47,7 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -135,6 +135,7 @@ STATIC_URL = '/static/'
 #test環境はここのファイルを読みにいってる
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), 
+    os.path.join(BASE_DIR, 'staticfiles'),
 )
 
 #管理コマンドで静的ファイルを集めるときに使うファイルストレージエンジン
