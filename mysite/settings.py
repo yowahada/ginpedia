@@ -117,11 +117,16 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+# /Users/ohashi-t/Desktop/djangogirls/mysite
+#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+# /Users/ohashi-t/Desktop/djangogirls/
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #collectstatic を使うときに、静的コンテンツを置いているディレクトリへの絶対パスを指定します。
 #本番環境でのみ利用される。nginxで静的ファイルを配信したい場合など。manage.py collectstaticによって静的ファイルがここにコピーされる。
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 #開発モードでSTATIC_ROOT から配信されたファイルを処理するためのURL
 STATIC_URL = '/static/'
@@ -133,7 +138,7 @@ STATICFILES_DIRS = (
 )
 
 #管理コマンドで静的ファイルを集めるときに使うファイルストレージエンジン
-#STATICFILES_STORAGE =  'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE =  'whitenoise.django.GzipManifestStaticFilesStorage'
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
