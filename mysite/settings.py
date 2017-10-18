@@ -126,7 +126,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #collectstatic を使うときに、静的コンテンツを置いているディレクトリへの絶対パスを指定します。
 #本番環境でのみ利用される。nginxで静的ファイルを配信したい場合など。manage.py collectstaticによって静的ファイルがここにコピーされる。
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 #開発モードでSTATIC_ROOT から配信されたファイルを処理するためのURL
 STATIC_URL = '/static/'
