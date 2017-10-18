@@ -155,3 +155,8 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+print(BASE_DIR)
+print(STATIC_URL)
+print(STATIC_ROOT)
+print(STATICFILES_DIRS)
