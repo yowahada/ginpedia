@@ -27,15 +27,15 @@
         	</div>
         	<div id="navbar" class="collapse navbar-collapse">
           		<ul class="nav navbar-nav">
-            		<li class="active"><a href="#">Gin Reviews</a></li>
-            		<li><a href="#about">About</a></li>
+            		<li class="active"><a href="#">Reviews</a></li>
+            		<li><a href="#about">AboutUs</a></li>
             		<li><a href="#contact">Contact</a></li>
           		</ul>
         	</div><!--/.nav-collapse -->
       		</div>
 	    </nav>
 	    <div class="inner-wrap">
-	    	<h2>ジンリスト_Gin List</h2>
+	    	<h2>ジンリスト | Gin List</h2>
 			<p>日本国内外のジン・クラフトジンを探求・発見していくことができる場になることを期待しています。乾杯！</p>
 		</div>
 		<div class="inner-wrap" style="margin-top: 50px;">
@@ -48,17 +48,14 @@
 				{% for post in posts %}
 				<tr>
 					<td><a href="{% url 'detail' post.pk %}">{{ post.title }}</a></td>
-					<td>{{ post.flavor_text }}</td>
+					<td>{{ post.Distillery }}</td>
 					<td></td>
 				</tr>
 				{% endfor %}
 			</table>
   		</div>
-  		<div style="background-color:#f1eff5; margin-top: 50px;">
-			<div class="inner-wrap">
-				<p>Copyright 2017</p>
-				<p>Ginpedia by tskz</p>
-			</div>
+  		<div style="background-color:#f1eff5; margin-top: 50px; padding: 20px 20px 20px;">
+			<p>Copyright 2017 Ginpedia by tskz</p>
 		</div>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>

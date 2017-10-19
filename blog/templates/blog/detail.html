@@ -23,29 +23,38 @@
             		<span class="icon-bar"></span>
             		<span class="icon-bar"></span>
           		</button>
-          	<a class="navbar-brand" href="#">About us</a>
+          	<p class="navbar-brand" href="#">詳細|Detail</p>
         	</div>
         	<div id="navbar" class="collapse navbar-collapse">
           		<ul class="nav navbar-nav">
-            		<li class="active"><a href="#"></a></li>
-            		<li><a href="#about">Gin List</a></li>
+            		<li class="active"><a href="#">Reviews</a></li>
+            		<li><a href="#about">AboutUs</a></li>
             		<li><a href="#contact">Contact</a></li>
           		</ul>
         	</div><!--/.nav-collapse -->
       		</div>
 	    </nav>
 	    <div class="inner-wrap">
-	    	<h2>About us</h2>
-			<p>{{ post }}</p>
+	    	<h1>{{ post.title }}</h1>
+			<p>蒸留所：{{ post.Distillery }}</p>
+			<p>度数：{{ post.ABV }}</p>
+			<p>価格：{{ post.Estimated_price }}</p>
+			<p>レビュー日：{{ post.published_date }}</p>
+		</div>
+		<div class="inner-wrap"> 
+			<h3>フレーバー</h3>
+			<p>{{ post.flavor_text }}</p>
+			<h3>レビュー</h3>
+			<p>{{ post.Tasting_note }}</p>
+			<h3>カクテル</h3>
+			<p>{{ post.Cocktails }}</p>
 		</div>
 		<div class="inner-wrap">
 		<a href="{% url 'gin_list' %}">一覧画面へ</a><br>
 	</div>
-	<div style="background-color:#f1eff5; margin-top: 50px;">
-		<div class="inner-wrap">
-				<p>copyright</p>
-			</div>
-	</div>
+	<div style="background-color:#f1eff5; margin-top: 50px; padding: 20px 20px 20px;">
+			<p>Copyright 2017 Ginpedia by tskz</p>
+		</div>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 	</body>
