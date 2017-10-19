@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/basic.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+		<link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
+		<title>好きなジンが見つかる。Ginpedia。</title>
+	</head>
+	<body>
+		<div class="inner-wrap">
+			<h1>Ginpedia</h1>
+		</div>
+		<nav class="navbar navbar-inverse">
+      		<div class="container">
+        	<div class="navbar-header">
+          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            		<span class="sr-only">Toggle navigation</span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</button>
+          	<a class="navbar-brand" href="#">Reviews</a>
+        	</div>
+        	<div id="navbar" class="collapse navbar-collapse">
+          		<ul class="nav navbar-nav">
+            		<li class="active"><a href="#">Gin Reviews</a></li>
+            		<li><a href="#about">About</a></li>
+            		<li><a href="#contact">Contact</a></li>
+          		</ul>
+        	</div><!--/.nav-collapse -->
+      		</div>
+	    </nav>
+	    <div class="inner-wrap">
+	    	<h2>ジンリスト_Gin List</h2>
+			<p>日本国内外のジン・クラフトジンを探求・発見していくことができる場になることを期待しています。乾杯！</p>
+		</div>
+		<div class="inner-wrap" style="margin-top: 50px;">
+			<table class="table table-striped table-hover table-condensed">
+				<tr>
+					<th>名前</th>
+					<th>蒸留所</th>
+					<th>レート</th>
+				</tr>
+				{% for post in posts %}
+				<tr>
+					<td><a href="{% url 'detail' post.pk %}">{{ post.title }}</a></td>
+					<td>{{ post.flavor_text }}</td>
+					<td></td>
+				</tr>
+				{% endfor %}
+			</table>
+  		</div>
+  		<div style="background-color:#f1eff5; margin-top: 50px;">
+			<div class="inner-wrap">
+				<p>Copyright 2017</p>
+				<p>Ginpedia by tskz</p>
+			</div>
+		</div>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+	</body>
+</html>

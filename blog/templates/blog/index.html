@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/basic.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+		<link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
+		<title>Ginpedia</title>
+	</head>
+	<body>
+		<div class="inner-wrap">
+			<h1>Ginpedia</h1>
+		</div>
+		<nav class="navbar navbar-inverse">
+      		<div class="container">
+        	<div class="navbar-header">
+          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            		<span class="sr-only">Toggle navigation</span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</button>
+          	<a class="navbar-brand" href="#">About us</a>
+        	</div>
+        	<div id="navbar" class="collapse navbar-collapse">
+          		<ul class="nav navbar-nav">
+            		<li class="active"><a href="#"></a></li>
+            		<li><a href="#about">Gin List</a></li>
+            		<li><a href="#contact">Contact</a></li>
+          		</ul>
+        	</div><!--/.nav-collapse -->
+      		</div>
+	    </nav>
+	    <div class="inner-wrap">
+	    	<h2>About us</h2>
+			<p>{{ post }}</p>
+		</div>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+	</body>
+</html>
