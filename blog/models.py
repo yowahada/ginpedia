@@ -27,6 +27,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    #管理画面に画像表示
     #def admin_image(self):
     #    if self.image:
     #        return '<img src="{}" style="width:100px;height:auto;">'.format(self.image.url)
