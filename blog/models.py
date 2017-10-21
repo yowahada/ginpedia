@@ -14,7 +14,9 @@ class Post(models.Model):
     url = models.URLField(
             blank=True, max_length=200,null=True)
     image = models.ImageField(
-            blank=True ,upload_to='document/',default='settings.MEDIA_ROOT/document/noimage.jpg')
+            blank=True ,upload_to='document/')
+    #image = models.ImageField(
+    #        blank=True ,upload_to='document/',default='settings.MEDIA_ROOT/document/noimage.jpg')
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
