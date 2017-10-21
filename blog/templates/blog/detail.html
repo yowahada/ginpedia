@@ -40,7 +40,9 @@
 			<p>度数：{{ post.ABV }}</p>
 			<p>価格：{{ post.Estimated_price }}</p>
 			<p>レビュー日：{{ post.published_date }}</p>
+			<img src="{{ post.image.url }}" style="max-height:500px"/>
 		</div>
+
 		<div class="inner-wrap"> 
 			<h3>フレーバー</h3>
 			<p>{{ post.flavor_text }}</p>

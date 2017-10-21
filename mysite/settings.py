@@ -121,7 +121,6 @@ USE_TZ = False
 
 # /Users/ohashi-t/Desktop/djangogirls/mysite
 #PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
 # /Users/ohashi-t/Desktop/djangogirls/
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -145,6 +144,11 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), 
 )
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = (
+    os.path.join(BASE_DIR, 'media'))
+
+#DB切替え用
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
