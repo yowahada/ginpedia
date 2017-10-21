@@ -27,10 +27,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def admin_image(self):
-        if self.image:
-            return '<img src="{}" style="width:100px;height:auto;">'.format(self.image.url)
-            #return(self.image.url)
-        else:
-            return 'no image'
-    admin_image.allow_tags = True
+    #def admin_image(self):
+    #    if self.image:
+    #        return '<img src="{}" style="width:100px;height:auto;">'.format(self.image.url)
+    #        #return(self.image.url)
+    #    else:
+    #        return 'no image'
+    #admin_image.allow_tags = True
