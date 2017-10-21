@@ -13,10 +13,10 @@ class Post(models.Model):
     Cocktails = models.TextField(null=True, default='comming soon')
     url = models.URLField(
             blank=True, max_length=200,null=True)
-    image = models.ImageField(
-            blank=True ,upload_to='document/')
     #image = models.ImageField(
-    #        blank=True ,upload_to='document/',default='settings.MEDIA_ROOT/document/noimage.jpg')
+    #        blank=True ,upload_to='document/')
+    image = models.ImageField(
+            blank=True ,upload_to='document/',default='settings.MEDIA_ROOT/document/404.png')
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -30,10 +30,10 @@ class Post(models.Model):
         return self.title
 
     #管理画面に画像表示
-    #def admin_image(self):
-    #    if self.image:
-    #        return '<img src="{}" style="width:100px;height:auto;">'.format(self.image.url)
-    #        #return(self.image.url)
-    #    else:
-    #        return 'no image'
-    #admin_image.allow_tags = True
+    def admin_image(self):
+        if self.image:
+            return '<img src="{}" style="width:100px;height:auto;">'.format(self.image.url)
+            #return(self.image.url)
+        else:
+            return 'no image'
+    admin_image.allow_tags = True
