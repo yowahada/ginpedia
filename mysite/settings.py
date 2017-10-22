@@ -23,12 +23,10 @@ SECRET_KEY = '#7%)s0xawb@!nu$m3r7idsh-m0#(-(2s5^$-i+njv!c@^8ssz9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-
 #ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'import_export',
     'blog',
 ]
 
