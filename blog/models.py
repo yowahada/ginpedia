@@ -21,7 +21,6 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
-
     def publish(self):
         self.published_date = timezone.now()
         self.save()
@@ -37,3 +36,10 @@ class Post(models.Model):
         else:
             return 'no image'
     admin_image.allow_tags = True
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100,null=True)
+
+    def __str__(self):
+        return self.name
