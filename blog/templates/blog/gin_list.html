@@ -27,9 +27,9 @@
         	</div>
         	<div id="navbar" class="collapse navbar-collapse">
           		<ul class="nav navbar-nav">
-            		<li><a href="#">Gin List</a></li>
+            		<li><a href="{% url 'blog:gin_list' %}">Gin List</a></li>
             		<li><a href="{% url 'blog:about' %}">About Us</a></li>
-            		<li><a href="{% url 'blog:contact' %}">Contact</a></li>
+            		<li><a href="{% url 'blog:contact_add' %}">Contact</a></li>
           		</ul>
         	</div><!--/.nav-collapse -->
       		</div>
@@ -49,16 +49,18 @@
 				<tr>
 					<td><button type="button" class="btn btn-default"><a href="{% url 'blog:detail' post.pk %}">{{ post.title }}</a></button></td>
 					<td>{{ post.Distillery }}</td>
-					<td>{{ post.id }}</td>
+					<td></td>
 				</tr>
 				{% endfor %}
 			</table>
   		</div>
-  		<div style="background-color:#f1eff5; margin-top: 50px; padding: 20px 20px 20px;">
-  			<div class="inner-wrap">
+		<!-- copy right -->
+  		<div style="margin-top: 50px; padding: 20px 20px 20px;">
+  			<div class="inner-wrap" align="center">
 			<p>Copyright 2017 Ginpedia by tskz</p>
 		</div>
 		</div>
+		<!-- copy right -->
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 	</body>

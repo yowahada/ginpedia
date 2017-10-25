@@ -29,18 +29,30 @@
           		<ul class="nav navbar-nav">
             		<li><a href="{% url 'blog:gin_list' %}">Gin List</a></li>
             		<li><a href="{% url 'blog:about' %}">About Us</a></li>
-            		<li><a href="{% url 'blog:contact' %}">Contact</a></li>
+            		<li><a href="{% url 'blog:contact_add' %}">Contact</a></li>
           		</ul>
         	</div><!--/.nav-collapse -->
       		</div>
 	    </nav>
-	    <div class="inner-wrap">
-	    	<h2>お問い合わせ</h2>
-			<p>{{ post }}</p>
-		</div>
-		<div class="inner-wrap" align="center">
-		<button type="button" class="btn btn-default"><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
-		</div>
+        <div class="inner-wrap">
+            <h2>お問い合わせ</h2>
+            <div align="center">
+                <form method="POST" class="form-row">{% csrf_token %}
+                    <table class="table table-responsive">
+                        {{ form.as_table }}
+                    </table>
+                    <button type="submit" class="btn btn-default btn-lg">送信</button>
+                </form>
+            </div>
+            <div align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
+                <button type="button" class="btn btn-default" ><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
+            </div>
+        </div>
+		<div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
+            <!-- copy right start -->
+                <p>Copyright 2017 Ginpedia by tskz</p>
+            <!-- copy right end -->
+        </div
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 	</body>

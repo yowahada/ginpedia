@@ -6764,3 +6764,7 @@ _custom816.scss:188
     margin: 0 auto;
     max-width: 1140px;
 }
+
+.table_form {
+    margin: 10px;
+}
