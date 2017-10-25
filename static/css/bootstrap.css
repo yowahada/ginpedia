@@ -175,7 +175,7 @@ legend {
 }
 textarea {
   overflow: auto;
-  max-width:  300px;
+  max-width:  70%;
 }
 optgroup {
   font-weight: bold;
