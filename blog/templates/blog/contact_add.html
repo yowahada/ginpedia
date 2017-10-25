@@ -36,7 +36,8 @@
 	    </nav>
         <div class="inner-wrap">
             <h2>お問い合わせ</h2>
-            <div align="center">
+            <p>ご質問・ご不明な点等ございましたら、下記のフォームまでお気軽にお問い合わせください。できるだけ早くお返事させていただきます。</p>
+            <div align="center" style="margin-top: 50px;">
                 <form method="POST" class="form-row">{% csrf_token %}
                     <table class="table table-responsive">
                         {{ form.as_table }}
