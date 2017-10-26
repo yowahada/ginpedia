@@ -40,16 +40,16 @@
 			<p>度数：{{ post.ABV }} 度</p>
 			<p>価格：{{ post.Estimated_price }}</p>
 			<p>レビュー日：{{ post.published_date }}</p>
-			<img src="{{ post.image.url }}" style="max-height:500px"/>
+			<img src="{{ post.image.url }}" style="max-width:100%; max-height:500px"/>
 		</div>
 
 		<div class="inner-wrap"> 
 			<h3>フレーバー</h3>
-			<p>{{ post.flavor_text }}</p>
+			<p>{{ post.flavor_text | linebreaksbr}}</p>
 			<h3>レビュー</h3>
-			<p>{{ post.Tasting_note }}</p>
+			<p>{{ post.Tasting_note | linebreaksbr}}</p>
 			<h3>カクテル</h3>
-			<p>{{ post.Cocktails }}</p>
+			<p>{{ post.Cocktails | linebreaksbr}}</p>
 		</div>
 		<div class="inner-wrap" align="center">
 		<button type="button" class="btn btn-default"><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
@@ -57,7 +57,7 @@
 	<!-- copy right start -->
   		<div style="margin-top: 50px; padding: 20px 20px 20px;">
   			<div class="inner-wrap" align="center">
-			<p>Copyright 2017 Ginpedia by tskz</p>
+			<p>Copyright 2017 Ginpedia by yowahada</p>
 		    </div>
 		</div>
 		<!-- copy right end -->
