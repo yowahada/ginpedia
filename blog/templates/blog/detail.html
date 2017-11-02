@@ -50,14 +50,14 @@
 			<p>蒸留所：{{ post.Distillery }}</p>
 			<p>度数：{{ post.ABV }} 度</p>
 			<p>価格：{{ post.Estimated_price }}</p>
-			<p>レビュー日：{{ post.published_date }}</p>
+			<!--<p>レビュー日：{{ post.published_date }}</p>-->
 			<img src="{{ post.image.url }}" style="max-width:100%; max-height:500px"/>
 		</div>
 
 		<div class="inner-wrap"> 
 			<h3>フレーバー・ボタニカル</h3>
 			<p>{{ post.flavor_text | linebreaksbr}}</p>
-			<h3>レビュー</h3>
+			<h3>ヒストリー</h3>
 			<p>{{ post.Tasting_note | linebreaksbr}}</p>
 			<h3>カクテル</h3>
 			<p>{{ post.Cocktails | linebreaksbr}}</p>
