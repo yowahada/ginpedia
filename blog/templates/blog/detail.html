@@ -1,78 +1,23 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ja">
-	<head>
-		<!-- Google Tag Manager -->
-			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document,'script','dataLayer','GTM-T49Q4JW');</script>
-		<!-- End Google Tag Manager -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<link rel="stylesheet" type="text/css" href="{% static 'css/basic.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
-		<link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
-		<title>Ginpedia</title>
-	</head>
-	<body>
-	<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T49Q4JW"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-		<div class="inner-wrap">
-			<h1>Ginpedia</h1>
-		</div>
-		<nav class="navbar navbar-inverse">
-      		<div class="container">
-        	<div class="navbar-header">
-          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            		<span class="sr-only">Toggle navigation</span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-          		</button>
-          	<div class="navbar-brand">Detail</div>
-        	</div>
-        	<div id="navbar" class="collapse navbar-collapse">
-          		<ul class="nav navbar-nav">
-            		<li><a href="{% url 'blog:gin_list' %}">Gin List</a></li>
-            		<li><a href="{% url 'blog:about' %}">About Us</a></li>
-            		<li><a href="{% url 'blog:contact_add' %}">Contact</a></li>
-          		</ul>
-        	</div><!--/.nav-collapse -->
-      		</div>
-	    </nav>
+{% extends "blog/base.html" %}
+
+{% block content %}
 	    <div class="inner-wrap">
 	    	<h2>{{ post.title }}</h2>
+			<p>{{ post.Flavor_text | linebreaksbr}}</p>
 			<p>蒸留所：{{ post.Distillery }}</p>
 			<p>度数：{{ post.ABV }} 度</p>
-			<p>価格：{{ post.Estimated_price }}</p>
-			<p>レビュー日：{{ post.published_date }}</p>
+			<p>国：{{ post.Country }}</p>
 			<img src="{{ post.image.url }}" style="max-width:100%; max-height:500px"/>
 		</div>
-
-		<div class="inner-wrap"> 
+		<div class="inner-wrap">
 			<h3>フレーバー・ボタニカル</h3>
 			<p>{{ post.flavor_text | linebreaksbr}}</p>
-			<h3>レビュー</h3>
+			<h3>ボタニカル</h3>
+			<p>{{ post.Botanical | linebreaksbr}}</p>
+			<h3>詳細</h3>
 			<p>{{ post.Tasting_note | linebreaksbr}}</p>
-			<h3>カクテル</h3>
-			<p>{{ post.Cocktails | linebreaksbr}}</p>
 		</div>
-		<div class="inner-wrap" align="center">
+		<div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
 		<button type="button" class="btn btn-default"><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
 		</div>
-	<!-- copy right start -->
-  		<div style="margin-top: 50px; padding: 20px 20px 20px;">
-  			<div class="inner-wrap" align="center">
-			<p>Copyright 2017 Ginpedia by yowahada</p>
-		    </div>
-		</div>
-		<!-- copy right end -->
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-	</body>
-</html>
+{% endblock content %}
