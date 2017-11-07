@@ -161,7 +161,11 @@ try:
 except ImportError:
     pass
 
-print(BASE_DIR)
-print(STATIC_URL)
-print(STATIC_ROOT)
-print(STATICFILES_DIRS)
+#/Users/ohashi-t/Desktop/djangogirls
+#/static/
+#staticfiles
+#('/Users/ohashi-t/Desktop/djangogirls/static',)
+#print(BASE_DIR)
+#print(STATIC_URL)
+#print(STATIC_ROOT)
+#print(STATICFILES_DIRS)

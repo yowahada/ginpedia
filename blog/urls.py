@@ -7,3 +7,7 @@ urlpatterns = [
     url(r'^about/$', views.about, name='about'),
     url(r'(?P<pk>\d+)/$', views.detail, name='detail'),
 ]
+
+#errorハンドラー。そのうち500書く
+#github:https://github.com/django/django/blob/master/django/views/defaults.py
+handler404 = 'main.views.error_404'
