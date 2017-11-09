@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-コメントコメントコメント
+クラフトジンとかボタニカルとか日々のこと
 
 
     <hr>
     {% for post in posts %}
         {{ post.updated_at | date:"Y年n月d日" }}<br>
-        <a href="{% url 'article:blog_article' post.pk %}"><h3>{{ post.title }}</h3></a><br>
+        > <a href="{% url 'article:blog_article' post.pk %}"><h3>{{ post.title }}</h3></a><br>
         <hr>
     {% endfor %}
     <br>
