@@ -2,6 +2,9 @@ from django.db import models
 from django.utils import timezone
 import os
 
+#==========================================
+#　models for gin list
+#==========================================
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)

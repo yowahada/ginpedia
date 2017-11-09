@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block meta_des %}{{ posts.description }}{% endblock %}
+{% block title %}{{ posts.title }} | サイト名{% endblock %}
+
+<!--&lt;!&ndash;{% block bread %}-->
+<!--<ol class="breadcrumb">-->
+  <!--<li><a href="/">ホーム</a></li>-->
+  <!--<li class="active">{{ page.title }}</li>-->
+<!--</ol>-->
+<!--{% endblock %}&ndash;&gt;-->
+
+{% block content %}
+  {% autoescape off %}
+    <h2>{{ posts.title }}</h2>
+    {{ posts.text }}
+  {% endautoescape %}
+{% endblock %}

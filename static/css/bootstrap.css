@@ -1085,8 +1085,10 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-family: "Sawarabi Mincho";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
@@ -6766,7 +6768,7 @@ _custom816.scss:188
 }
 .inner-wrap {
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 1140px;
 }
 
 .table_form {

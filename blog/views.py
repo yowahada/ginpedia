@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
 from .forms import ContactForm
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse
+from django.http import Http404
 
 
 # Create your views here.
@@ -33,11 +34,3 @@ def contact_add(request):
 
 def about(request):
 	return render(request, 'blog/about_us.html', )
-
-#error_view。そのうち500書く
-#github:https://github.com/django/django/blob/master/django/views/defaults.py
-def error_404(request):
-	contexts = {
-		'request_path': request.path,
-	}
-	return render(request, '404.html', contexts, status=404)

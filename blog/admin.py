@@ -13,8 +13,7 @@ class PostResource(resources.ModelResource):
                 }
 
 class PostAdmin(ImportExportModelAdmin,admin.ModelAdmin):
-	list_display = ('title','Distillery','ABV','admin_image')
-	#resource_class = PostResource
+    list_display = ('title','Distillery','ABV','admin_image')
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Contact)

@@ -27,18 +27,10 @@ h2 span::before {
 h2 span::after {
   left: 100%;
 }
-
-div {
-  display: block;
-  font-size: 15px;
-  font-family: "Sawarabi Mincho";
-  font-style: normal;
-  font-weight: 400;
-}
-p{
-  padding:5px 8px 5px 8px;
-}
 /*
+p {
+  padding:10px 8px 5px 8px;
+}
 #main {
     padding-top: 23px;
     padding-bottom: 20px;
