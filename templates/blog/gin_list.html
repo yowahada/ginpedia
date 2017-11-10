@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
-{% block content %}
 
+{% block content %}
 	<h2>ジンリスト | Gin List</h2>
 	<p>日本国内外のジン・クラフトジンを探求・発見していくことができる場になることを期待しています。乾杯！</p>
 	<!--<div class="inner-wrap" style="margin-top: 50px;">-->
@@ -19,5 +19,5 @@
 				</tr>
 			{% endfor %}
 		</table>
-	<!--</div>-->
+        {% include "list.html" %}<!--ページングinclude-->
 {% endblock content %}
