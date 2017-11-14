@@ -7,7 +7,7 @@ from django.utils import timezone
 #==========================================
 
 class Page(models.Model):
-    # author = models.ForeignKey('auth.User')
+    author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=255)
     text = models.TextField()
     description = models.CharField(max_length=255)
