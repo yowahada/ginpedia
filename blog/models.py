@@ -1,6 +1,22 @@
 from django.db import models
 from django.utils import timezone
 import os
+#==========================================
+#　Botanical for gin list
+#==========================================
+class Botanicals(models.Model):
+    title = models.CharField(max_length=200)
+    Flavor_text = models.TextField(null=True, default='comming soon')
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title
 
 #==========================================
 #　models for gin list
@@ -23,6 +39,7 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
+    botanicals = models.ManyToManyField(Botanicals,blank=True)
     def publish(self):
         self.published_date = timezone.now()
         self.save()
@@ -39,6 +56,9 @@ class Post(models.Model):
     admin_image.allow_tags = True
 
 
+#==========================================
+#　問い合わせ用
+#==========================================
 class Contact(models.Model):
     name = models.CharField("氏名", max_length=15,null=True)
     mail = models.EmailField("Mail", max_length=75,blank=True)
