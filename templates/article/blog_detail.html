@@ -11,8 +11,9 @@
 <!--{% endblock %}&ndash;&gt;-->
 
 {% block content %}
-  {% autoescape off %}
     <h2>{{ posts.title }}</h2>
-    {{ posts.text }}
-  {% endautoescape %}
+      {{ posts.updated_at | date:"Y年n月d日" }} {{ posts.author }}<br><br>
+      {% autoescape off %}
+        {{ posts.text }}
+      {% endautoescape %}
 {% endblock %}
