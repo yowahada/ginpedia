@@ -8,13 +8,13 @@
 			<!--table-striped table-hover table-condensed-->
 			<tr>
 				<th>名前</th>
-				<th>蒸留所</th>
+				<th>生産地</th>
 				<th>度数</th>
 			</tr>
 			{% for post in posts %}
 				<tr>
 					<td><button type="button" class="btn btn-default"><a href="{% url 'blog:detail' post.pk %}">> {{ post.title }}</a></button></td>
-					<td>{{ post.Distillery }}</td>
+					<td>{{ post.Country }}</td>
 					<td>{{ post.ABV }}</td>
 				</tr>
 			{% endfor %}
