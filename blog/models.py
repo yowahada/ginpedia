@@ -31,6 +31,7 @@ class Post(models.Model):
     Estimated_price = models.CharField(max_length=200,null=True ,default='comming soon')
     Flavor_text = models.TextField(null=True, default='comming soon')
     Botanical = models.TextField(default='comming soon')
+    botanicals = models.ManyToManyField(Botanicals, blank=True)
     Tasting_note = models.TextField(null=True, default='comming soon')
     url = models.URLField(
             blank=True, max_length=200,null=True)
@@ -40,7 +41,6 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
-    botanicals = models.ManyToManyField(Botanicals,blank=True)
     def publish(self):
         self.published_date = timezone.now()
         self.save()
