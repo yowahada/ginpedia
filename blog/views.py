@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post
+from .models import Post, Botanicals
 from .forms import ContactForm
 from django.http import HttpResponse
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views.generic import TemplateView, DetailView
 
 # Create your views here.
 def post_list(request):
@@ -45,3 +46,15 @@ def contact_add(request):
 
 def about(request):
 	return render(request, 'blog/about_us.html', )
+
+class MaterialsView(TemplateView):
+	template_name = "blog/material.html"
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)  # はじめに継承元のメソッドを呼び出す
+		"""
+		ここに処理記載
+		"""
+		# context['tag'] =
+
+		return context
