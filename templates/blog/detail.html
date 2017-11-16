@@ -12,7 +12,7 @@
 		<div class="inner-wrap">
 			<h3>ボタニカル</h3>
 			{% for tag in post.botanicals.all %}
-			<li><a href="{% url 'blog:Material' tag.title %}">{{ tag.title }}</a></li>
+			<li><a href="{% url 'blog:Material' tag.id %}">{{ tag.title }}</a></li>
 			{% endfor %}
 			<!--<p>{{ post.Botanical | linebreaksbr}}</p>-->
 			<h3>詳細</h3>

@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<li>素材名</li>
+{{ botanicals.title }}
+<br><br>
+<li>説明</li>
+{{ botanicals.Flavor_text }}
+		<div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
+		<button type="button" class="btn btn-default"><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
+		</div>
+{% endblock content %}

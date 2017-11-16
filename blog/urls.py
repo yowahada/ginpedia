@@ -10,7 +10,11 @@ urlpatterns = [
 
     url(r'^(?P<pk>\d+)/$', views.detail, name='detail'),
 
-    url(r'^material/(?P<tag>.*)/$',views.MaterialsView.as_view(),name='Material'),
+
+    # URLを文字に、データ引渡しを手動で行う場合
+    # url(r'^material/(?P<tag>.*)/$',views.MaterialsView.as_view(),name='Material'),
+
+    url(r'^material/(?P<id>\d+)/$',views.botanicalDetailView.as_view(),name='Material'),
 ]
 """==============errorハンドラー==============
 そのうち500書く
