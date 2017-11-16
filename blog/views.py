@@ -66,5 +66,8 @@ def about(request):
 class botanicalDetailView(DetailView):
 
 	model = Botanicals
-	pk_url_kwarg = 'id'
+	# pk_url_kwarg = 'id'
 	# template_name = 'blog/test.html'
+	# urlに数字ではなく文字を入れる場合。urls.pyにも反映
+	slug_field = "title"  # モデルのフィールドの名前
+	slug_url_kwarg = "title"  # urls.pyでのキーワードの名前

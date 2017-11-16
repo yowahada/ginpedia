@@ -12,13 +12,13 @@
 		<div class="inner-wrap">
 			<h3>ボタニカル</h3>
 			{% for tag in post.botanicals.all %}
-			<li><a href="{% url 'blog:Material' tag.id %}">{{ tag.title }}</a></li>
+			<li><a href="{% url 'blog:Material' tag.title %}">{{ tag.title }}</a></li>
 			{% endfor %}
 			<!--<p>{{ post.Botanical | linebreaksbr}}</p>-->
 			<h3>詳細</h3>
 			<p>{{ post.Tasting_note | linebreaksbr}}</p>
 		</div>
 		<div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
-		<button type="button" class="btn btn-default"><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
+		<a href="{% url 'blog:gin_list' %}"><button type="button" class="btn btn-default">一覧画面へ</button></a><br>
 		</div>
 {% endblock content %}
