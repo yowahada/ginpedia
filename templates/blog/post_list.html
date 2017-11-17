@@ -1,9 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
 <!--別モデル表示テスト-->
 <li>別モデル表示テスト</li>
 {% for botanical in botanicals %}
     <input type="checkbox" id="filter_botanical_{{ botanical.pk }}"
            name="botanical"
-           value="{{ botanical.pk }}">{{ botanical.title }}
+           value="{{ botanical.pk }}">{{ botanical.title }}<br>
 {% endfor %}
 <br><br><br>
 <!--フォームのテスト-->
@@ -22,3 +25,4 @@
             <li>{{ gin.title }}</li>
         {% endfor %}
 </div>
+{% endblock content %}

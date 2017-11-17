@@ -77,7 +77,6 @@ class GinListView(ListView):
 
 	model = Post
 	context_object_name = "gin_list"
-	paginate_by = 2
 
 	def get_context_data(self, **kwargs):
 		context = super(GinListView, self).get_context_data(**kwargs)
