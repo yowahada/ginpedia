@@ -15,6 +15,8 @@ urlpatterns = [
     # url(r'^material/(?P<tag>.*)/$',views.MaterialsView.as_view(),name='Material'),
 
     url(r'^material/(?P<title>.*)/$',views.botanicalDetailView.as_view(),name='Material'),
+
+    url(r'^lists/$', views.GinListView.as_view(), name='post_list'),
 ]
 """==============errorハンドラー==============
 そのうち500書く

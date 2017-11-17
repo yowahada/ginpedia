@@ -3,7 +3,8 @@ from .models import Page
 
 # Create your views here.
 def blog_list(request):
-	posts = Page.objects.all()
+	posts = Page.objects.filter(
+            is_publick=True).reverse()
 	return render(request, 'article/blog_list.html',{
 		'posts': posts
 	})

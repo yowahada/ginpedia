@@ -1,0 +1,24 @@
+<!--別モデル表示テスト-->
+<li>別モデル表示テスト</li>
+{% for botanical in botanicals %}
+    <input type="checkbox" id="filter_botanical_{{ botanical.pk }}"
+           name="botanical"
+           value="{{ botanical.pk }}">{{ botanical.title }}
+{% endfor %}
+<br><br><br>
+<!--フォームのテスト-->
+<li>フォームのテスト</li>
+<form method="get" action="" name="filter_form">
+    <input type="search" id="filter_name"
+           name="name"
+           placeholder="test">
+    <button id="filter">search</button>
+</form>
+<br><br><br>
+<!--結果のテスト-->
+<div id="main">
+    <h1>結果</h1>
+        {% for gin in gin_list %}
+            <li>{{ gin.title }}</li>
+        {% endfor %}
+</div>
