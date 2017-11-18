@@ -11,6 +11,7 @@ html {
 }
 body {
   margin: 0;
+  padding-top:70px;
 }
 article,
 aside,
@@ -4498,12 +4499,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
 }
+/* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  /*background-color: #f8f8f8;
+  border-color: #e7e7e7;*/
+  background-color: #FFFFFF;
+  border-color: #000000;
 }
+/* navbar テキストカラー */
 .navbar-default .navbar-brand {
-  color: #777;
+  /*color: #777;*/
+  color: #000000;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {

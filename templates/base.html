@@ -21,10 +21,10 @@
 	    <!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T49Q4JW"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<div class="inner-wrap">
-			<h1>Ginpedia</h1>
-		</div><!-- End Google Tag Manager (noscript) -->
-        <nav class="navbar navbar-inverse">
+		<!--<div class="inner-wrap">-->
+			<!--<h1>Ginpedia</h1>-->
+		<!--</div>&lt;!&ndash; End Google Tag Manager (noscript) &ndash;&gt;-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       		<div class="container">
         	<div class="navbar-header">
           		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -33,7 +33,7 @@
             		<span class="icon-bar"></span>
             		<span class="icon-bar"></span>
           		</button>
-          	<a class="navbar-brand" href="{% url 'article:blog_list' %}">Menu</a>
+          	<a class="navbar-brand" href="{% url 'article:blog_list' %}">Ginpedia</a>
         	<!--<a class="navbar-brand" href="#">Menu</a>-->
 			</div>
         	<div id="navbar" class="collapse navbar-collapse">
@@ -46,6 +46,7 @@
         	</div><!--/.nav-collapse -->
       		</div>
 	    </nav><!-- End nav -->
+		<main>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-md-10 col-md-offset-1">
@@ -66,6 +67,6 @@
 
 		<!-- Custom JS -->
   		<!--<script src="{% static 'js/base.js' %}"></script>-->
-
+		</main>
 	</body>
 </html>

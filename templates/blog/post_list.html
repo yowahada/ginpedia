@@ -1,6 +1,43 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
+<!--結果のテスト-->
+<!--<div id="main">-->
+    <!--<h1>結果</h1>-->
+        <!--{% for gin in gin_list %}-->
+            <!--<li>{{ gin.title }}</li>-->
+        <!--{% endfor %}-->
+<!--</div>-->
+	<h2>ジンリスト | Gin List</h2>
+	<p>日本国内外のジン・クラフトジンを探求・発見していくことができる場になることを期待しています。乾杯！</p>
+	<!--<div class="inner-wrap" style="margin-top: 50px;">-->
+    <!--フォームのテスト-->
+        <form method="get" action="" name="filter_form">
+            <input type="search" id="filter_name"
+                   name="name"
+                   placeholder="test">
+            <button id="filter">search</button>
+        </form>
+        <br>
+		<table class="table">
+			<!--table-striped table-hover table-condensed-->
+			<tr>
+				<th>名前</th>
+				<th>生産地</th>
+				<th>度数</th>
+			</tr>
+			{% for gin in gin_list %}
+				<tr>
+					<td><a class="btn btn-default" href="{% url 'blog:detail' gin.pk %}" role="button"> > {{ gin.title }}</a></td>
+					<td>{{ gin.Country }}</td>
+					<td>{{ gin.ABV }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+		<!--<div align="center">-->
+        	<!--{% include "list.html" %}&lt;!&ndash;ページングinclude&ndash;&gt;-->
+		<!--</div>-->
+
 <!--別モデル表示テスト-->
 <li>別モデル表示テスト</li>
 {% for botanical in botanicals %}
@@ -8,21 +45,5 @@
            name="botanical"
            value="{{ botanical.pk }}">{{ botanical.title }}<br>
 {% endfor %}
-<br><br><br>
-<!--フォームのテスト-->
-<li>フォームのテスト</li>
-<form method="get" action="" name="filter_form">
-    <input type="search" id="filter_name"
-           name="name"
-           placeholder="test">
-    <button id="filter">search</button>
-</form>
-<br><br><br>
-<!--結果のテスト-->
-<div id="main">
-    <h1>結果</h1>
-        {% for gin in gin_list %}
-            <li>{{ gin.title }}</li>
-        {% endfor %}
-</div>
+
 {% endblock content %}
