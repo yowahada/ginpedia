@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Botanicals
 from .forms import ContactForm
+from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import TemplateView, DetailView, ListView
+from .models import Post, Botanicals
+from article.models import Page
 
 """メインリスト"""
 def post_list(request):
@@ -77,11 +79,12 @@ class GinListView(ListView):
 
 	model = Post
 	context_object_name = "gin_list"
+	paginate_by = 5
 
 	def get_context_data(self, **kwargs):
 		context = super(GinListView, self).get_context_data(**kwargs)
 
-		botanicals = Botanicals.objects.all()
+		botanicals = Page.objects.all()
 		context['botanicals'] = botanicals
 
 		return context
@@ -93,6 +96,7 @@ class GinListView(ListView):
 		q_name = self.request.GET.get('name')
 
 		if q_name is not None:
-			results = results.filter(title__icontains=q_name)
-
+			results = results.filter(
+				Q(title__icontains=q_name) | Q(Tasting_note__icontains=q_name) | Q(Country__icontains=q_name)
+			)
 		return results

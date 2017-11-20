@@ -12,12 +12,14 @@
 	<p>日本国内外のジン・クラフトジンを探求・発見していくことができる場になることを期待しています。乾杯！</p>
 	<!--<div class="inner-wrap" style="margin-top: 50px;">-->
     <!--フォームのテスト-->
-        <form method="get" action="" name="filter_form">
+     <div align="center">
+		<form method="get" action="" name="filter_form">
             <input type="search" id="filter_name"
                    name="name"
-                   placeholder="test">
-            <button id="filter">search</button>
+                   placeholder="産地,名前,甘い">
+            <button class="btn btn-success" id="filter">search</button>
         </form>
+	 </div>
         <br>
 		<table class="table">
 			<!--table-striped table-hover table-condensed-->
@@ -34,16 +36,59 @@
 				</tr>
 			{% endfor %}
 		</table>
-		<!--<div align="center">-->
-        	<!--{% include "list.html" %}&lt;!&ndash;ページングinclude&ndash;&gt;-->
+		<!--<div class="pagination" align="center">-->
+			<!--<span class="step-links">-->
+				<!--{% if page_obj.has_previous %}-->
+            		<!--<a href="?page={{ page_obj.previous_page_number }}">previous</a>-->
+        		<!--{% endif %}-->
+        		<!--<span class="current">-->
+            		<!--Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.-->
+        		<!--</span>-->
+        		<!--{% if page_obj.has_next %}-->
+            		<!--<a href="?page={{ page_obj.next_page_number }}">next</a>-->
+        		<!--{% endif %}-->
+			<!--</span>-->
 		<!--</div>-->
-
+		<div class="inner-wrap" align="center" style="margin-top: 25px; padding: 20px 20px 20px;">
+			<a class="btn btn-primary" href="{% url 'blog:gin_list' %}" role="button">Read more</a><br>
+		</div>
 <!--別モデル表示テスト-->
-<li>別モデル表示テスト</li>
+<h4>最新のトピック</h4>
+<div class="row">
 {% for botanical in botanicals %}
-    <input type="checkbox" id="filter_botanical_{{ botanical.pk }}"
-           name="botanical"
-           value="{{ botanical.pk }}">{{ botanical.title }}<br>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img data-src="holder.js/300x300" alt="...">
+      <div class="caption">
+        <h4>{{ botanical.title }}</h4>
+        <p>{{ botanical.Flavor_text }}</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
 {% endfor %}
+</div>
+
+
+<!--<div class="media">-->
+	<!--{% for botanical in botanicals %}-->
+		<!--<a class="media-left media-middle" href="#">-->
+			<!--<img data-src="..." alt="...">-->
+		<!--</a>-->
+  		<!--<div class="media-body">-->
+			<!--<h4 class="media-heading">{{ botanical.title }}</h4>-->
+    		<!--{{ botanical.Flavor_text }}-->
+		<!--</div><br>-->
+	<!--{% endfor %}-->
+<!--</div>-->
+
+
+<!--<li>別モデル表示テスト</li>-->
+<!--{% for botanical in botanicals %}-->
+    <!--<input type="checkbox" id="filter_botanical_{{ botanical.pk }}"-->
+           <!--name="botanical"-->
+           <!--value="{{ botanical.pk }}">{{ botanical.title }}<br>-->
+<!--{% endfor %}-->
+
 
 {% endblock content %}
