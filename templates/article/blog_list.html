@@ -1,16 +1,18 @@
 {% extends "article/base_blog.html" %}
 
 {% block content %}
-クラフトジンとかボタニカルとか日々のこと
-
-
-    <hr>
-    {% for post in posts %}
-        {{ post.updated_at | date:"Y年n月d日" }} {{ post.author }}<br>
-        <h3><a href="{% url 'article:blog_article' post.pk %}">{{ post.title }}</a></h3><br>
-        <hr>
-    {% endfor %}
-    <br>
-    <button type="button" class="btn btn-default" ><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
-
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+            <p>クラフトジンとかボタニカルとか日々のこと</p>
+            <hr>
+            {% for post in posts %}
+                {{ post.updated_at | date:"Y年n月d日" }} {{ post.author }}<br>
+                <h3><a href="{% url 'article:blog_article' post.pk %}">{{ post.title }}</a></h3><br><hr>
+            {% endfor %}
+            <br>
+        <button type="button" class="btn btn-default" ><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
+        </div>
+    </div>
+<!--</div> container -->
 {% endblock content %}

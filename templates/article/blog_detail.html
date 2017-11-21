@@ -11,9 +11,15 @@
 <!--{% endblock %}&ndash;&gt;-->
 
 {% block content %}
-    <h2>{{ posts.title }}</h2>
-      {{ posts.updated_at | date:"Y年n月d日" }} {{ posts.author }}<br><br>
-      {% autoescape off %}
-        {{ posts.text }}
-      {% endautoescape %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+            <h2>{{ posts.title }}</h2>
+            {{ posts.updated_at | date:"Y年n月d日" }} {{ posts.author }}<br><br>
+            {% autoescape off %}
+            {{ posts.text }}
+            {% endautoescape %}
+        </div>
+    </div>
+<!--</div> container -->
 {% endblock %}

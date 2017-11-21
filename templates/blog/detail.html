@@ -1,24 +1,29 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-	    <div class="inner-wrap">
-	    	<h2>{{ post.title }}</h2>
-			<p>{{ post.Flavor_text | linebreaksbr}}</p>
-			<p>蒸留所：{{ post.Distillery }}</p>
-			<p>度数：{{ post.ABV }} 度</p>
-			<p>国：{{ post.Country }}</p>
-			<img src="{{ post.image.url }}" style="max-width:100%; max-height:500px"/>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-10 col-md-offset-1">
+	    	<div class="inner-wrap">
+	    		<h2>{{ post.title }}</h2>
+				<p>{{ post.Flavor_text | linebreaksbr}}</p>
+				<p>蒸留所：{{ post.Distillery }}</p>
+				<p>度数：{{ post.ABV }} 度</p>
+				<p>国：{{ post.Country }}</p>
+				<img src="{{ post.image.url }}" style="max-width:100%; max-height:500px"/>
+			</div>
+			<div class="inner-wrap">
+				<h3>ボタニカル</h3>
+				{% for tag in post.botanicals.all %}
+				<li><a href="{% url 'blog:Material' tag.title %}">{{ tag.title }}</a></li>
+				{% endfor %}
+				<h3>詳細</h3>
+				<p>{{ post.Tasting_note | linebreaksbr}}</p>
+			</div>
+			<div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
+				<a class="btn btn-default" href="{% url 'blog:gin_list' %}" role="button">一覧画面へ</a><br>
+			</div>
 		</div>
-		<div class="inner-wrap">
-			<h3>ボタニカル</h3>
-			{% for tag in post.botanicals.all %}
-			<li><a href="{% url 'blog:Material' tag.title %}">{{ tag.title }}</a></li>
-			{% endfor %}
-			<!--<p>{{ post.Botanical | linebreaksbr}}</p>-->
-			<h3>詳細</h3>
-			<p>{{ post.Tasting_note | linebreaksbr}}</p>
-		</div>
-		<div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
-			<a class="btn btn-default" href="{% url 'blog:gin_list' %}" role="button">一覧画面へ</a><br>
-		</div>
+	</div>
+<!--</div> container -->
 {% endblock content %}

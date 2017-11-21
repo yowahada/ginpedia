@@ -1,8 +1,11 @@
 {% extends "blog/base_about.html" %}
 {% block content %}
-		<h2>私たち | About us</h2>
-		<p>プロフィール</p>
-		<p><a href="https://github.com/yowahada">@yowahada</a><br>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-10 col-md-offset-1">
+			<h2>私たち | About us</h2>
+			<p>プロフィール</p>
+			<p><a href="https://github.com/yowahada">@yowahada</a><br>
 			細かい作業が好き。PM。見習エンジニア。<br>
 			静岡県沼津市出身。<br>
 			建築学科卒業。<br>
@@ -15,7 +18,10 @@
 			一級建築士。アーバンデザイン、意匠計画が専門。<br>
 			某有名カフェ、カーショールーム、テレビ局の建築設計を経験後、リノベーション、オフィスの内装の設計職を行う。<br>
 			デジタルデザインとプログラミングで現状の非効率業態の刷新に奮闘。</p>
-		<div align="center">
-		<a class="btn btn-default" href="{% url 'blog:gin_list' %}" role="button">一覧画面へ</a><br>
+			<div align="center">
+				<a class="btn btn-default" href="{% url 'blog:gin_list' %}" role="button">一覧画面へ</a><br>
+			</div>
 		</div>
+	</div>
+<!--</div> container -->
 {% endblock content %}

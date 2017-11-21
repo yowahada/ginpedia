@@ -1,6 +1,9 @@
 {% extends "blog/base_contact.html" %}
 
 {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
         <div class="inner-wrap">
             <h2>お問合せ | Contact</h2>
             <p>ご質問・ご不明な点等ございましたら、下記のフォームまでお気軽にお問い合わせください。できるだけ早くお返事させていただきます。</p>
@@ -16,4 +19,7 @@
                 <a class="btn btn-default" href="{% url 'blog:gin_list' %}" role="button">一覧画面へ</a><br>
             </div>
         </div>
+        </div>
+    </div>
+<!--</div> container -->
 {% endblock content %}
