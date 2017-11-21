@@ -55,7 +55,7 @@ h2 span::after {
   background-color: #ccc;
 }
 .box__bg_photo {
-  background-image: url("/static/photo/top_photo.jpg");
+  background-image: url("/static/photo/top_photo2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
