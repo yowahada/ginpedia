@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#7%)s0xawb@!nu$m3r7idsh-m0#(-(2s5^$-i+njv!c@^8ssz9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ginpedia.herokuapp.com']
 DEBUG = False
 
 
