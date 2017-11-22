@@ -22,8 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#7%)s0xawb@!nu$m3r7idsh-m0#(-(2s5^$-i+njv!c@^8ssz9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+DEBUG = False
 
 
 # Application definition
@@ -74,18 +74,20 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# DB切替え用
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -104,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
-
 LANGUAGE_CODE = 'ja-JP'
 
 TIME_ZONE = 'Asia/Tokyo'
@@ -120,26 +121,25 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 # /Users/ohashi-t/Desktop/djangogirls/mysite
-#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # /Users/ohashi-t/Desktop/djangogirls/
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-#collectstatic を使うときに、静的コンテンツを置いているディレクトリへの絶対パスを指定します。
-#本番環境でのみ利用される。nginxで静的ファイルを配信したい場合など。manage.py collectstaticによって静的ファイルがここにコピーされる。
-#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# collectstatic を使うときに、静的コンテンツを置いているディレクトリへの絶対パスを指定します。
+# 本番環境でのみ利用される。nginxで静的ファイルを配信したい場合など。manage.py collectstaticによって静的ファイルがここにコピーされる。
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_ROOT = 'staticfiles'
 
-#開発モードでSTATIC_ROOT から配信されたファイルを処理するためのURL
+# 開発モードでSTATIC_ROOT から配信されたファイルを処理するためのURL
 STATIC_URL = '/static/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-
-#ファイルディレクトリのフルパスの文字列をリストかタプルとして設定
-#test環境はここのファイルを読みにいってる
+# ファイルディレクトリのフルパスの文字列をリストかタプルとして設定
+# test環境はここのファイルを読みにいってる
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), 
 )
@@ -148,25 +148,20 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = (
     os.path.join(BASE_DIR, 'media'))
 
-#DB切替え用
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-ALLOWED_HOSTS = ['*']
-DEBUG = False
 
+# ローカル設定呼び込み
 try:
     from .local_settings import *
 except ImportError:
     pass
 
-#/Users/ohashi-t/Desktop/djangogirls
-#/static/
-#staticfiles
-#('/Users/ohashi-t/Desktop/djangogirls/static',)
-#print(BASE_DIR)
-#print(STATIC_URL)
-#print(STATIC_ROOT)
-#print(STATICFILES_DIRS)
+# パス書き出し
+# /Users/ohashi-t/Desktop/djangogirls
+# /static/
+# staticfiles
+# ('/Users/ohashi-t/Desktop/djangogirls/static',)
+# print(BASE_DIR)
+# print(STATIC_URL)
+# print(STATIC_ROOT)
+# print(STATICFILES_DIRS)
