@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '#7%)s0xawb@!nu$m3r7idsh-m0#(-(2s5^$-i+njv!c@^8ssz9'
+SECRET_KEY = 'SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 ALLOWED_HOSTS = ['ginpedia.herokuapp.com']
@@ -135,7 +135,12 @@ STATIC_URL = '/static/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
+
+# WhiteNoise comes with a storage backend which automatically takes care of compressing your files and creating unique names for each version
+# so they can safely be cached forever. To use it, just add this to your settings.py:
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# If you’d like gzip functionality enabled, also add the following setting to settings.py
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # ファイルディレクトリのフルパスの文字列をリストかタプルとして設定
