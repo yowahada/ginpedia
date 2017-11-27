@@ -5,4 +5,4 @@ local_settings.py
 db.sqlite3
 *.py[co]
 media/
-local_setting_files
+local_setting_files.py

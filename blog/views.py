@@ -83,8 +83,8 @@ class GinListView(ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super(GinListView, self).get_context_data(**kwargs)
-
-		botanicals = Page.objects.all()
+		# 最新の記事X件を抽出
+		botanicals = Page.objects.all().order_by('id').reverse()[:3]
 		context['botanicals'] = botanicals
 
 		return context
