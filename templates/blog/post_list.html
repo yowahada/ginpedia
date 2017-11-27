@@ -16,6 +16,12 @@
                    placeholder="産地,名前,甘い">
 				<button class="btn btn-default" id="filter">search</button>
 			</form><!--フォームのテスト-->
+			<form method="POST" class="form-row">{% csrf_token %}
+                    <table class="table">
+                        {{ form.as_table }}
+                    </table>
+                    <button type="submit" class="btn btn-default btn-lg" style="margin: 20px">送信</button>
+                </form>
 		</div>
 	</div>
 </div>
@@ -63,14 +69,14 @@
 				<h4>最新トピック</h4>
 			</div>
 			<div class="row">
-				{% for botanical in botanicals %}
+				{% for page in pages %}
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<img src="{{ botanical.thumnail.url }}" alt="...">
+						<img src="{{ page.thumnail.url }}" alt="...">
 						<div class="caption">
-							<h4>{{ botanical.title }}</h4>
-							<p>{{ botanical.Flavor_text }}</p>
-							<p><a href="{% url 'article:blog_article' botanical.pk %}" class="btn btn-default" role="button">記事を読む</a></p>
+							<h4>{{ page.title }}</h4>
+							<p>{{ page.Flavor_text }}</p>
+							<p><a href="{% url 'article:blog_article' page.pk %}" class="btn btn-default" role="button">記事を読む</a></p>
 						</div>
 					</div>
 				</div>

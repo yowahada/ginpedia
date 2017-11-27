@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .forms import ContactForm
+from .forms import ContactForm, GinSearchForm
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import TemplateView, DetailView, ListView
 from .models import Post, Botanicals
 from article.models import Page
+from django.views.generic.edit import FormMixin
 
 """メインリスト"""
 def post_list(request):
@@ -80,12 +81,15 @@ class GinListView(ListView):
 	model = Post
 	context_object_name = "gin_list"
 	paginate_by = 5
+	ordering = '-pk'
+
+	# form_class =
 
 	def get_context_data(self, **kwargs):
 		context = super(GinListView, self).get_context_data(**kwargs)
 		# 最新の記事X件を抽出
-		botanicals = Page.objects.all().order_by('id').reverse()[:3]
-		context['botanicals'] = botanicals
+		pages = Page.objects.all().order_by('id').reverse()[:3]
+		context['pages'] = pages
 
 		return context
 

@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Contact
+from .models import Contact, Post
 
 class ContactForm(ModelForm):
     """コンタクトフォーム"""
@@ -11,9 +11,12 @@ class ContactForm(ModelForm):
 class GinSearchForm(forms.Form):
     """検索フォーム"""
 
-    keyword = forms.CharField(label='キーワード', required=False)
+    class Meta:
+        model = Post
+        # keyword = forms.CharField(label='キーワード', required=False)
+        keyword = forms.CharField(label='キーワード', required=False)
 
-    def __init__(self,*args,**kwargs):
-        super().__init__(*args,**kwargs)
-        self.fields['keyword'].widget.attrs['class'] = 'form-control'
-        self.fields['keyword'].widget.attrs['placeholder'] = 'クイックサーチ'
+    # def __init__(self,*args,**kwargs):
+    #     super().__init__(*args,**kwargs)
+    #     self.fields['keyword'].widget.attrs['class'] = 'form-control'
+    #     self.fields['keyword'].widget.attrs['placeholder'] = 'クイックサーチ'
