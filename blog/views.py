@@ -31,15 +31,15 @@ def post_list(request):
 
 """ジン詳細画面"""
 def detail(request, pk):
-    posts = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/detail.html', {
+	posts = get_object_or_404(Post, pk=pk)
+	return render(request, 'blog/detail.html', {
         'post': posts
     })
 
 """form.py呼び出し"""
 def contact_add(request):
 	if request.method == "POST" :
-		form= ContactForm(request.POST)
+		form = ContactForm(request.POST)
 		if form.is_valid():
 			post = form.save(commit=False)
 			post.save()
@@ -82,8 +82,6 @@ class GinListView(ListView):
 	context_object_name = "gin_list"
 	paginate_by = 5
 	ordering = '-pk'
-
-	# form_class =
 
 	def get_context_data(self, **kwargs):
 		context = super(GinListView, self).get_context_data(**kwargs)

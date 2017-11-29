@@ -1,0 +1,22 @@
+{% extends "article/base_blog.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
+            <h2>トピック</h2>
+            <p>クラフトジンとかボタニカルとか日々のこと</p>
+            <form action="" method="GET">
+                {{ form }}
+                <input type="submit" value="検索">
+            </form>
+            <hr>
+            {% for page in object_list %}
+                {{ page.updated_at | date:"Y年n月d日" }} {{ page.author }}<br>
+                <h3><a href="{% url 'article:blog_article' page.title %}">{{ page.title }}</a></h3><br><hr>
+            {% endfor %}
+        <button type="button" class="btn btn-default" ><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
+        </div>
+    </div>
+<!--</div> container -->
+{% endblock content %}

@@ -31,3 +31,10 @@ urlpatterns = [
     url(r'^index/',include('blog.urls',namespace='blog')),
     url(r'^blog/',include('article.urls',namespace='article')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+                      url(r'^blog/', include(debug_toolbar.urls)),
+                  ] + urlpatterns

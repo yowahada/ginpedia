@@ -1,4 +1,5 @@
 {% extends "blog/base_contact.html" %}
+{% load widget_tweaks %}
 
 {% block content %}
 <div class="container">
@@ -7,14 +8,30 @@
         <div class="inner-wrap">
             <h2>お問合せ | Contact</h2>
             <p>ご質問・ご不明な点等ございましたら、下記のフォームまでお気軽にお問い合わせください。できるだけ早くお返事させていただきます。</p>
-            <div class="table-responsive" align="center" style="margin-top: 50px;">
-                <form method="POST" class="form-row">{% csrf_token %}
-                    <table class="table">
-                        {{ form.as_table }}
-                    </table>
-                    <button type="submit" class="btn btn-default btn-lg" style="margin: 20px">送信</button>
+            <!--<div class="table-responsive" align="center" style="margin-top: 50px;">-->
+                <!--<form method="POST" class="form-row">{% csrf_token %}-->
+                    <!--<table class="table">-->
+                        <!--{{ form.as_table }}-->
+                    <!--</table>-->
+                    <!--<button type="submit" class="btn btn-default btn-lg" style="margin: 20px">送信</button>-->
+                <!--</form>-->
+            <!--</div>-->
+                <form method="POST" novalidate>
+                    {% csrf_token %}
+                    {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                    {% endfor %}
+                    {% for field in form.visible_fields %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        {% render_field field class="form-control" %}
+                        {% if field.help_text %}
+                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">送信</button>
                 </form>
-            </div>
             <div align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
                 <a class="btn btn-default" href="{% url 'blog:gin_list' %}" role="button">一覧画面へ</a><br>
             </div>
