@@ -78,8 +78,7 @@ class TopListView(ListView):
 
 	model = Post
 	context_object_name = "gin_list"
-	paginate_by = 8
-	ordering = '-pk'
+	paginate_by = 5
 
 	def get_context_data(self, **kwargs):
 		context = super(TopListView, self).get_context_data(**kwargs)
@@ -91,7 +90,7 @@ class TopListView(ListView):
 
 	def get_queryset(self):
 		# デフォルトは全件取得らしい
-		results = self.model.objects.all()
+		results = self.model.objects.all().order_by('-published_date')
 
 		q_name = self.request.GET.get('name')
 

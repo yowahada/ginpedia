@@ -29,9 +29,10 @@ class Post(models.Model):
     Country = models.CharField(max_length=100, blank=True)
     Estimated_price = models.CharField(max_length=200,null=True ,default='comming soon')
     Flavor_text = models.TextField(null=True, default='comming soon')
-    Botanical = models.TextField(default='comming soon')
+    # Botanical = models.TextField(default='comming soon')
     botanicals = models.ManyToManyField(Botanicals, blank=True)
     Tasting_note = models.TextField(null=True, default='comming soon')
+    history = models.TextField(null=True, default='comming soon')
     url = models.URLField(
             blank=True, max_length=200,null=True)
     image = models.ImageField(
