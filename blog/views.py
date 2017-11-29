@@ -158,10 +158,6 @@ class GinListView(FormGinList):
 	paginate_by = 4
 	ordering = '-pk'
 
-	# def get_context_data(self, **kwargs):
-	# 	context = super(GinListView, self).get_context_data(**kwargs)
-	# 	return context
-
 
 
 

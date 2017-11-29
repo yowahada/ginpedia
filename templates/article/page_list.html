@@ -4,12 +4,16 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1">
-            <h2>トピック</h2>
+            <h3>トピック</h3>
             <p>クラフトジンとかボタニカルとか日々のこと</p>
-            <form action="" method="GET">
-                {{ form }}
-                <input type="submit" value="検索">
-            </form>
+            <div class="input-group">
+                <form action="" method="GET">
+                    <span class="input-group-btn">
+                        {{ form }}
+                        <button class="btn btn-default" type="submit">検索</button>
+                    </span>
+                </form>
+            </div>
             <hr>
             {% for page in object_list %}
                 {{ page.updated_at | date:"Y年n月d日" }} {{ page.author }}<br>
