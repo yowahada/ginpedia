@@ -7,8 +7,6 @@ from .forms import MySearchForm
 
 # Create your views here.
 class FormListView(generic.ListView):
-	model = Page
-
 	def get(self, request, *args, **kwargs):
 
 		self.form = MySearchForm(self.request.GET)

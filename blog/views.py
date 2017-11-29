@@ -8,26 +8,26 @@ from .models import Post, Botanicals
 from article.models import Page
 from django.views.generic.edit import FormMixin
 
-"""メインリスト"""
-def post_list(request):
-	posts = Post.objects.all().order_by('published_date').reverse()
-	# 絞りこみ + オーダー
-	# posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-
-	"""paginator"""
-	page = request.GET.get('page',1)
-
-	paginator = Paginator(posts,5)
-	try:
-		posts = paginator.page(page)
-	except PageNotAnInteger:
-		posts = paginator.page(1)
-	except EmptyPage:
-		posts = paginator.page(paginator.num_pages)
-
-	return render(request, 'blog/gin_list.html', {
-        	'posts': posts
-    	})
+# """メインリスト改修前"""
+# def post_list(request):
+# 	posts = Post.objects.all().order_by('published_date').reverse()
+# 	# 絞りこみ + オーダー
+# 	# posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+#
+# 	"""paginator"""
+# 	page = request.GET.get('page',1)
+#
+# 	paginator = Paginator(posts,5)
+# 	try:
+# 		posts = paginator.page(page)
+# 	except PageNotAnInteger:
+# 		posts = paginator.page(1)
+# 	except EmptyPage:
+# 		posts = paginator.page(paginator.num_pages)
+#
+# 	return render(request, 'blog/gin_list.html', {
+#         	'posts': posts
+#     	})
 
 """ジン詳細画面"""
 def detail(request, pk):
@@ -53,8 +53,6 @@ def contact_add(request):
 def about(request):
 	return render(request, 'blog/about_us.html', )
 
-
-
 # """データ引渡しを手動で行う場合"""
 # class MaterialsView(TemplateView):
 # 	template_name = "blog/material.html"
@@ -75,8 +73,8 @@ class botanicalDetailView(DetailView):
 	slug_field = "title"  # モデルのフィールドの名前
 	slug_url_kwarg = "title"  # urls.pyでのキーワードの名前
 
-"""filter、Search機能実装用view"""
-class GinListView(ListView):
+"""TOP画面_view"""
+class TopListView(ListView):
 
 	model = Post
 	context_object_name = "gin_list"
@@ -84,7 +82,7 @@ class GinListView(ListView):
 	ordering = '-pk'
 
 	def get_context_data(self, **kwargs):
-		context = super(GinListView, self).get_context_data(**kwargs)
+		context = super(TopListView, self).get_context_data(**kwargs)
 		# 最新の記事X件を抽出
 		pages = Page.objects.all().order_by('id').reverse()[:3]
 		context['pages'] = pages
@@ -102,3 +100,68 @@ class GinListView(ListView):
 				Q(title__icontains=q_name) | Q(Tasting_note__icontains=q_name) | Q(Country__icontains=q_name)
 			)
 		return results
+
+"""filter、Search機能実装用view"""
+class FormGinList(ListView):
+	def get(self, request, *args, **kwargs):
+		self.form = GinSearchForm(self.request.GET)
+		self.form.is_valid()
+
+		self.object_list = self.get_queryset()
+		allow_empty = self.get_allow_empty()
+
+		if not allow_empty and len(self.object_list) == 0:
+			raise Http404(_(u"Empty list and '%(class_name)s.allow_empty' is False.")
+						  % {'class_name': self.__class__.__name__})
+		context = self.get_context_data(
+			object_list=self.object_list,
+			form=self.form
+		)
+		return self.render_to_response(context)
+
+	def get_queryset(self):
+		if self.queryset is not None:
+			queryset = self.queryset
+			if isinstance(queryset, QuerySet):
+				queryset = queryset.all()
+		elif self.model is not None:
+			queryset = self.model._default_manager.all()
+		else:
+			raise ImproperlyConfigured(
+				"%(cls)s is missing a QuerySet. Define "
+				"%(cls)s.model, %(cls)s.queryset, or override "
+				"%(cls)s.get_queryset()." % {
+					'cls': self.__class__.__name__
+				}
+			)
+
+		# ここで、フォームからキーワードを取得しフィルター
+		keyword = self.form.cleaned_data['keyword']
+		if keyword:
+			queryset = queryset.filter(
+				Q(title__icontains=keyword) | Q(Tasting_note__icontains=keyword) | Q(Country__icontains=keyword)
+			)
+
+		ordering = self.get_ordering()
+		if ordering:
+			if isinstance(ordering, str):
+				ordering = (ordering,)
+			queryset = queryset.order_by(*ordering)
+
+		return queryset
+
+"""メインリスト改修"""
+class GinListView(FormGinList):
+	model = Post
+	template_name = 'blog/gin_list.html'
+	context_object_name = "gin_list"
+	paginate_by = 4
+	ordering = '-pk'
+
+	# def get_context_data(self, **kwargs):
+	# 	context = super(GinListView, self).get_context_data(**kwargs)
+	# 	return context
+
+
+
+

@@ -1,16 +1,21 @@
+{% load blog_tag %}
 <!--ページング用html-->
 <div class="pagination" align="center">
     <span class="step-links">
-        {% if posts.has_previous %}
-            <a href="?page={{ posts.previous_page_number }}">previous</a>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
         {% endif %}
 
         <span class="current">
-            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
         </span>
 
-        {% if posts.has_next %}
-            <a href="?page={{ posts.next_page_number }}">next</a>
+        <!--{% if page_obj.has_next %}-->
+            <!--<a href="?page={{ page_obj.next_page_number }}">next</a>-->
+        <!--{% endif %}-->
+
+        {% if page_obj.has_next %}
+        <a class="page-link" href="?{% url_replace request 'page' page_obj.next_page_number %}">next</a>
         {% endif %}
     </span>
 </div>
