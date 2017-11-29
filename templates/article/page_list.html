@@ -19,7 +19,7 @@
                 {{ page.updated_at | date:"Y年n月d日" }} {{ page.author }}<br>
                 <h3><a href="{% url 'article:blog_article' page.title %}">{{ page.title }}</a></h3><br><hr>
             {% endfor %}
-        <button type="button" class="btn btn-default" ><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
+        <button type="button" class="btn btn-default btn-block" ><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
         </div>
     </div>
 <!--</div> container -->

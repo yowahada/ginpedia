@@ -78,7 +78,7 @@ class TopListView(ListView):
 
 	model = Post
 	context_object_name = "gin_list"
-	paginate_by = 5
+	paginate_by = 8
 	ordering = '-pk'
 
 	def get_context_data(self, **kwargs):
@@ -155,7 +155,7 @@ class GinListView(FormGinList):
 	model = Post
 	template_name = 'blog/gin_list.html'
 	context_object_name = "gin_list"
-	paginate_by = 4
+	paginate_by = 8
 	ordering = '-pk'
 
 
