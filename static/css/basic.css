@@ -30,7 +30,7 @@ h2 span::after {
 /* 画像MAX追加 */
 .scroll-area {
   width: 100%;
-  height: 75vh;
+  height: 65vh;
   overflow: auto;
   -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
@@ -41,7 +41,7 @@ h2 span::after {
 }
 .box {
   width: 100%;
-  height: 75vh;
+  height: 65vh;
   color: #fff;
   display: flex;
   align-items: center; /* 縦方向中央揃え */
