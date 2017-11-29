@@ -13,13 +13,13 @@
 				<img src="{{ post.image.url }}" style="max-width:100%; max-height:500px"/>
 			</div>
 			<div class="inner-wrap">
-				<h4>ボタニカル</h4>
+				<h3>ボタニカル</h3>
 				{% for tag in post.botanicals.all %}
 				<li><a href="{% url 'blog:Material' tag.title %}">{{ tag.title }}</a></li>
 				{% endfor %}
-				<h4>詳細</h4>
+				<h3>詳細</h3>
 				<p>{{ post.Tasting_note | linebreaksbr}}</p>
-				<h4>ヒストリー</h4>
+				<h3>ヒストリー</h3>
 				<p>{{ post.history | linebreaksbr}}</p>
 			</div>
 			<div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
