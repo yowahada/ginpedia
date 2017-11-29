@@ -6,20 +6,22 @@
         <div class="col-xs-12 col-md-10 col-md-offset-1">
             <h3>トピック</h3>
             <p>クラフトジンとかボタニカルとか日々のこと</p>
-            <div class="input-group">
-                <form action="" method="GET">
-                    <span class="input-group-btn">
-                        {{ form }}
-                        <button class="btn btn-default" type="submit">検索</button>
-                    </span>
-                </form>
-            </div>
+            <!--<div class="input-group">-->
+                <!--<form action="" method="GET">-->
+                    <!--<span class="input-group-btn">-->
+                        <!--{{ form }}-->
+                        <!--<button class="btn btn-default" type="submit">検索</button>-->
+                    <!--</span>-->
+                <!--</form>-->
+            <!--</div>-->
             <hr>
             {% for page in object_list %}
                 {{ page.updated_at | date:"Y年n月d日" }} {{ page.author }}<br>
                 <h3><a href="{% url 'article:blog_article' page.title %}">{{ page.title }}</a></h3><br><hr>
             {% endfor %}
-        <button type="button" class="btn btn-default btn-block" ><a href="{% url 'blog:gin_list' %}">一覧画面へ</a></button><br>
+            <div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
+                <a class="btn btn-default btn-block" href="{% url 'blog:gin_list' %}" role="button">一覧画面へ</a><br>
+            </div>
         </div>
     </div>
 <!--</div> container -->
