@@ -32,8 +32,7 @@
 				</tr>
 				{% for gin in gin_list %}
 				<tr>
-					<td><a class="btn btn-default" href="{% url 'blog:detail' gin.pk %}" role="button"> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-{{ gin.title }}</a></td>
+					<td><a class="btn btn-default" href="{% url 'blog:detail' gin.pk %}" role="button"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>{{ gin.title }}</a></td>
 					<td>{{ gin.Country }}</td>
 					<td>{{ gin.ABV }}</td>
 				</tr>
