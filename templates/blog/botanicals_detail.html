@@ -1,12 +1,19 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-<li>素材名</li>
-{{ botanicals.title }}
-<br><br>
-<li>説明</li>
-{{ botanicals.Flavor_text }}
-		<div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
-		<a class="btn btn-default btn-block" href="{% url 'blog:gin_list' %}" role="button">一覧画面へ</a><br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-1">
+			<h2>ボタニカルリスト</h2>
+			<li>素材名</li>
+			{{ botanicals.title }}
+			<br><br>
+			<li>説明</li>
+			{{ botanicals.Flavor_text }}
+			<div class="inner-wrap" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
+				<a class="btn btn-default btn-block" href="{% url 'blog:gin_list' %}" role="button">一覧画面へ</a><br>
+			</div>
 		</div>
+	</div>
+<!--</div> container -->
 {% endblock content %}
