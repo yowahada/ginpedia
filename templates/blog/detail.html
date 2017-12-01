@@ -22,7 +22,7 @@
 				<h3>ヒストリー</h3>
 				<p>{{ post.history | linebreaksbr}}</p>
 			</div>
-			<div class="card-footer" align="center">
+			<div class="#" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
 				<!--{{ post.get_prev.title }}でタイトル引っ張ってこれる-->
 				{% if post.get_prev %}
 				<p><a class="btn btn-default" href="{% url 'blog:detail' post.get_prev.pk %}"><i class="fa fa-angle-double-left" aria-hidden="true"></i> 前へ</a>
