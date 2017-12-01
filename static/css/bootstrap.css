@@ -5915,6 +5915,7 @@ button.close {
   margin: 10px;
 }
 .modal-content {
+  /*pointer-events: all*/
   position: relative;
   background-color: #fff;
   -webkit-background-clip: padding-box;
@@ -5936,8 +5937,8 @@ button.close {
   background-color: #000;
 }
 .modal-backdrop.fade {
-  filter: alpha(opacity=0);
-  opacity: 0;
+  filter: alpha(opacity=50);
+  opacity: .5;
 }
 .modal-backdrop.in {
   filter: alpha(opacity=50);
@@ -5982,6 +5983,12 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
+    /*display: flex
+    flex-direction: column
+    justify-content: center
+      min-height: 100%
+    margin: auto
+    pointer-events: none*/
     width: 600px;
     margin: 30px auto;
   }

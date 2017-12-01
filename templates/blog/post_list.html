@@ -10,8 +10,9 @@
 					<h2>クラフトジンリスト</h2>
 					<p>日本国内外のクラフトジンを探求・発見していくことができる場になると期待しています。乾杯！</p>
 					<div align="center">
-						<a class="btn btn-success btn-block" href="{% url 'blog:gin_list' %}" role="button"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
- クイックサーチ</a><br>
+						<a class="btn btn-success btn-block" href="{% url 'blog:gin_list' %}" role="button"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>クイックサーチ</a><br>
+									<!--&lt;!&ndash; モーダルウィンドウを呼び出すボタン &ndash;&gt;-->
+						<!--<button type="button" class="btn  btn-success btn-block" data-toggle="modal" data-target="#myModal"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>クイックサーチ</button>-->
 					</div>
 				</div>
 			</div>
@@ -23,6 +24,22 @@
 		<div class="col-xs-12 col-md-8 col-md-offset-2" align="center">
 			<br>
 			<h4>最新クラフトジンリスト</h4>
+			<!--&lt;!&ndash; モーダルウィンドウの中身 &ndash;&gt;-->
+						<!--<div class="modal fade" id="myModal">-->
+						  <!--<div class="modal-dialog">-->
+							<!--<div class="modal-content">-->
+							  <!--<div class="modal-header">-->
+								<!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+								<!--<h4 class="modal-title">Modal タイトル</h4>-->
+							  <!--</div>-->
+							  <!--<div class="modal-body">Modal内容</div>-->
+							  <!--<div class="modal-footer">-->
+								<!--<button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>-->
+							   <!--</div>-->
+							<!--</div>-->
+						  <!--</div>-->
+						<!--</div>-->
+			<!--&lt;!&ndash; モーダルウィンドウの中身 &ndash;&gt;-->
 			<table class="table">
 				<!--table-striped table-hover table-condensed-->
 				<tr>
@@ -80,22 +97,3 @@
 	</div>
 <!--<div class="media">-->
 {% endblock content %}
-
-	<!--{% for botanical in botanicals %}-->
-		<!--<a class="media-left media-middle" href="#">-->
-			<!--<img data-src="..." alt="...">-->
-		<!--</a>-->
-  		<!--<div class="media-body">-->
-			<!--<h4 class="media-heading">{{ botanical.title }}</h4>-->
-    		<!--{{ botanical.Flavor_text }}-->
-		<!--</div><br>-->
-	<!--{% endfor %}-->
-<!--</div>-->
-
-
-<!--<li>別モデル表示テスト</li>-->
-<!--{% for botanical in botanicals %}-->
-    <!--<input type="checkbox" id="filter_botanical_{{ botanical.pk }}"-->
-           <!--name="botanical"-->
-           <!--value="{{ botanical.pk }}">{{ botanical.title }}<br>-->
-<!--{% endfor %}-->
