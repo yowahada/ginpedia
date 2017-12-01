@@ -56,13 +56,25 @@ class Post(models.Model):
             return 'no image'
     admin_image.allow_tags = True
 
-# '''
-# リレーションテスト
-# '''
-# class Relationship(models.Model):
-#     title = models.ForeignKey(Botanicals, on_delete=models.CASCADE)
-#     gin_name = models.ForeignKey(Post, on_delete=models.CASCADE)
 
+    def get_next(self):
+        """次の記事."""
+        next_post = Post.objects.filter(
+            published_date__gt=self.published_date
+        ).order_by('-published_date')
+        if next_post:
+            return next_post.last()
+        return None
+
+
+    def get_prev(self):
+        """前の記事."""
+        prev_post = Post.objects.filter(
+            published_date__lt=self.published_date
+        ).order_by('-published_date')
+        if prev_post:
+            return prev_post.first()
+        return None
 
 '''問い合わせ用'''
 class Contact(models.Model):
