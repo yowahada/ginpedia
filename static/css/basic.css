@@ -60,6 +60,9 @@ h2 span::after {
   background-position: center;
   background-repeat: no-repeat;
 }
+.wf-sawarabimincho {
+ font-family: "Sawarabi Mincho";
+}
 /*
 p {
   padding:10px 8px 5px 8px;
