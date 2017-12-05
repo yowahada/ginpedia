@@ -64,7 +64,6 @@ def about(request):
 
 """ボタニカル詳細画面/DetailView実装"""
 class botanicalDetailView(DetailView):
-
 	model = Botanicals
 	# pk_url_kwarg = 'id'
 	# template_name = 'blog/test.html'
