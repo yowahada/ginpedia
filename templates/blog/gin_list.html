@@ -18,8 +18,8 @@
 					</span>
 				</form>
 			</div>
-			<br>
-			<!--<div class="btn-group" >-->
+
+			<!--<br><div class="btn-group" >-->
 				<!--<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">-->
 					<!--生産地選択-->
 					<!--<span class="caret"></span>-->
@@ -30,19 +30,22 @@
 					<!--{% endfor %}-->
 				<!--</ul>-->
 			<!--</div>-->
-			<!--<div class="btn-group">-->
-				<!--<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">-->
-					<!--ジャンル選択-->
-					<!--<span class="caret"></span>-->
-				<!--</button>-->
-				<!--<ul class="dropdown-menu" role="menu">-->
-					<!--{% for sort in gin_sort_genre %}-->
-					<!--<li role="presentation"><a href="#">{{ sort.genre_name }}</a></li>-->
+			<!--<form>-->
+				<!--<select name="genre" class="form-control">-->
+					<!--{% for sort_country in gin_sort_country %}-->
+					<!--<option value="{{ sort.genre_name }}">{{ sort.Country }}</option>-->
 					<!--{% endfor %}-->
-				<!--</ul>-->
-			<!--</div>-->
+				<!--</select>-->
+			<!--</form>-->
+			<!--<form>-->
+				<!--<select name="genre" class="form-control">-->
+					<!--{% for sort in gin_sort_genre %}-->
+					<!--<option value="{{ sort.genre_name }}">{{ sort.genre_name }}</option>-->
+					<!--{% endfor %}-->
+				<!--</select>-->
+			<!--</form><br><br>-->
 			<!--filter-->
-			<br><br><br>
+			<br>
 			<table class="table">
 			<tr>
 				<th>名前</th>

@@ -2374,4 +2374,9 @@ $('.dropdown-toggle').dropdown()
     })
   })
 
+   $('select[name=color]').val("blue");
+   $('.selectpicker').selectpicker('refresh');
+
 }(jQuery);
+
+

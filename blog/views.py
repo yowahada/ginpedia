@@ -146,6 +146,10 @@ class FormGinList(ListView):
 				ordering = (ordering,)
 			queryset = queryset.order_by(*ordering)
 
+		# q_kinds = self.request.GET.getlist('genre')
+		# if q_kinds is not None:
+		# 	queryset = queryset.filter(Country__contains=q_kinds)
+
 		return queryset
 
 """メインリスト改修"""
