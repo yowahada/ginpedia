@@ -5,7 +5,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-8 col-md-offset-2">
-		<h3>クラフトジンリスト</h3>
+			<ol class="breadcrumb">
+				<li><a href="{% url 'blog:post_list' %}">Home</a></li>
+				<li class="active">GinList</li>
+			</ol>
+			<h3>クラフトジンリスト</h3>
 			<div class="input-group">
 				<form action="" method="GET">
 					<span class="input-group-btn">
@@ -14,17 +18,17 @@
 				</form>
 			</div>
 			<br>
-			<div class="dropdown">
-				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-					国選択
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" role="menu">
-					{% for sort_country in gin_sort_country %}
-					<li role="presentation"><a href="#">{{ sort_country.Country }}</a></li>
-					{% endfor %}
-				</ul>
-			</div>
+			<!--<div class="dropdown">-->
+				<!--<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">-->
+					<!--国選択-->
+					<!--<span class="caret"></span>-->
+				<!--</button>-->
+				<!--<ul class="dropdown-menu" role="menu">-->
+					<!--{% for sort_country in gin_sort_country %}-->
+					<!--<li role="presentation"><a href="#">{{ sort_country.Country }}</a></li>-->
+					<!--{% endfor %}-->
+				<!--</ul>-->
+			<!--</div>-->
 			<br>
 			<table class="table">
 			<tr>
