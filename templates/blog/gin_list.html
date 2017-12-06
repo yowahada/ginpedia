@@ -14,17 +14,17 @@
 				</form>
 			</div>
 			<br>
-			<!--<div class="dropdown">-->
-				<!--<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">-->
-					<!--国選択-->
-					<!--<span class="caret"></span>-->
-				<!--</button>-->
-				<!--<ul class="dropdown-menu" role="menu">-->
-					<!--{% for sort in gin_sort %}-->
-					<!--<li role="presentation"><a href="#">{{ sort.Country }}</a></li>-->
-					<!--{% endfor %}-->
-				<!--</ul>-->
-			<!--</div>-->
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+					国選択
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					{% for sort_country in gin_sort_country %}
+					<li role="presentation"><a href="#">{{ sort_country.Country }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
 			<br>
 			<table class="table">
 			<tr>
@@ -45,5 +45,5 @@
 			</div>
 		</div>
 	</div>
-<!--</div> container -->
+</div>
 {% endblock content %}

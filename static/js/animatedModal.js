@@ -128,5 +128,5 @@ $(function(){
 	    animatedOut:'fadeOutDown',
 	    color:'#fff'
 	});
-	$('#animatedModal').css('backgroundColor','rgba(255,255,255,0.8)');
+	/*$('#animatedModal').css('backgroundColor','rgba(255,255,255,0.8)');*/
 });
