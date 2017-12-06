@@ -5,12 +5,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-8 col-md-offset-2">
-			<ol class="breadcrumb">
+			<ol class="breadcrumb" style="margin: 10px 0px 5px 0px;">
 				<li><a href="{% url 'blog:post_list' %}">Home</a></li>
 				<li class="active">GinList</li>
 			</ol>
 			<h3>クラフトジンリスト</h3>
-			<div class="input-group">
+			<!--filter-->
+			<div class="input-group" align="center">
 				<form action="" method="GET">
 					<span class="input-group-btn">
 						{{ form }}<button class="btn btn-default" type="submit">検索</button>
@@ -18,9 +19,9 @@
 				</form>
 			</div>
 			<br>
-			<!--<div class="dropdown">-->
+			<!--<div class="btn-group" >-->
 				<!--<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">-->
-					<!--国選択-->
+					<!--生産地選択-->
 					<!--<span class="caret"></span>-->
 				<!--</button>-->
 				<!--<ul class="dropdown-menu" role="menu">-->
@@ -29,7 +30,19 @@
 					<!--{% endfor %}-->
 				<!--</ul>-->
 			<!--</div>-->
-			<br>
+			<!--<div class="btn-group">-->
+				<!--<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">-->
+					<!--ジャンル選択-->
+					<!--<span class="caret"></span>-->
+				<!--</button>-->
+				<!--<ul class="dropdown-menu" role="menu">-->
+					<!--{% for sort in gin_sort_genre %}-->
+					<!--<li role="presentation"><a href="#">{{ sort.genre_name }}</a></li>-->
+					<!--{% endfor %}-->
+				<!--</ul>-->
+			<!--</div>-->
+			<!--filter-->
+			<br><br><br>
 			<table class="table">
 			<tr>
 				<th>名前</th>

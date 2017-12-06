@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Contact, Botanicals
+from .models import Post, Contact, Botanicals, Genre
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 from import_export import fields
@@ -18,3 +18,4 @@ class PostAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 admin.site.register(Post, PostAdmin)
 admin.site.register(Contact)
 admin.site.register(Botanicals)
+admin.site.register(Genre)

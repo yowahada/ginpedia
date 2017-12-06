@@ -2,6 +2,13 @@ from django.db import models
 from django.utils import timezone
 import os
 
+class Genre(models.Model):
+    genre_name = models.CharField(max_length=200,null=True,)
+    content = models.TextField(null=True, default='comming soon')
+
+    def __str__(self):
+        return self.genre_name
+
 '''Botanical for gin list'''
 class Botanicals(models.Model):
     title = models.CharField(max_length=200)
@@ -28,8 +35,8 @@ class Post(models.Model):
     ABV = models.CharField(max_length=200,null=True,default='comming soon')
     Country = models.CharField(max_length=100, blank=True)
     Estimated_price = models.CharField(max_length=200,null=True ,default='comming soon')
+    genre = models.ForeignKey('Genre',null=True)
     Flavor_text = models.TextField(null=True, default='comming soon')
-    # Botanical = models.TextField(default='comming soon')
     botanicals = models.ManyToManyField(Botanicals, blank=True)
     Tasting_note = models.TextField(null=True, default='comming soon')
     history = models.TextField(null=True, default='comming soon')
