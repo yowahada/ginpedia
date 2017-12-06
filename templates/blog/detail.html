@@ -7,7 +7,7 @@
 			<ol class="breadcrumb" style="margin: 10px 0px 5px 0px;">
 				<li><a href="{% url 'blog:post_list' %}">Home</a></li>
 				<li><a href="{% url 'blog:gin_list' %}">GinList</a></li>
-				<li class="active">Details</li>
+				<li class="active">{{ post.title }}</li>
 			</ol>
 	    	<div class="inner-wrap">
 	    		<h2>{{ post.title }}</h2>
