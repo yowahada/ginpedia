@@ -31,6 +31,7 @@ h2 span::after {
 .scroll-area {
   width: 100%;
   height: 65vh;
+  margin-bottom: 10px;
   overflow: auto;
   -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
@@ -60,28 +61,43 @@ h2 span::after {
   background-position: center;
   background-repeat: no-repeat;
 }
-.wf-sawarabimincho {
- font-family: "Sawarabi Mincho";
-}
-/*
-p {
-  padding:10px 8px 5px 8px;
-}
-#main {
-    padding-top: 23px;
-    padding-bottom: 20px;
-    background-color: #ffffff;
-}
+/*画像上にボタン*/
+.example {
+  position: relative;
+  }
+.example a {/*aタグを画像の真ん中に*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  /*以下装飾*/
+  margin:0;/*余計な隙間を除く*/
+  font-size: 16px;/*文字サイズ*/
+  border: solid white 2px; /*線で囲う*/
+  padding: 5px;/*文字と線の間の余白*/
+  color: white;/*文字色*/
+  text-decoration: none;/*下線を表示させない*/
+  }
+.example a:hover{/*カーソルを当てたとき*/
+  background: rgba(255, 255, 255, 0.3);/*背景を半透明に*/
+  }
+.example img {
+  width: 100%;
+  }
 
-@media screen and (max-width: 1190px)
-_custom816.scss:188
-.inner-wrap {
-    width: 94%;
+/*ブログページ用css*/
+.row.row1
+{
+  margin-right: 0px;
 }
-.inner-wrap {
-    margin: 0 auto;
-    max-width: 1140px;
+.container-fluid.container-page-item-title {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #F5F5F5;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center center;
 }
-.clearfix {
-    display: block;
-}*/

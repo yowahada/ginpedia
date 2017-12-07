@@ -30,33 +30,32 @@
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T49Q4JW"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
 		<!-- nav SP -->
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-8 col-md-offset-2" align="center">
-					<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="{% url 'blog:post_list' %}">Ginpedia</a>
+		<div class="container">
+			<div class="row">
+				<nav class="navbar navbar-default navbar-fixed-top">
+					<div class="col-xs-12 col-md-6 col-md-offset-3">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="{% url 'blog:post_list' %}">Ginpedia</a>
+						</div>
+						<div class="collapse navbar-collapse" id="navbar">
+							<!--<ul class="nav navbar-nav">-->
+							<ul class="nav nav-tabs nav-justified">
+								<li class="{% block nav_click1 %}{% endblock %}"><a href="{% url 'blog:gin_list' %}"><i class="hidden-md hidden-lg fa fa-database" aria-hidden="true"></i> GinList</a></li>
+								<li class="{% block nav_click2 %}{% endblock %}"><a href="{% url 'article:page_list' %}"><i class="hidden-md hidden-lg fa fa-tags" aria-hidden="true"></i> Topic</a></li>
+								<li class="{% block nav_click3 %}{% endblock %}"><a href="{% url 'blog:about' %}"><i class="hidden-md hidden-lg fa fa-user-circle" aria-hidden="true"></i> About</a></li>
+								<li class="{% block nav_click4 %}{% endblock %}"><a href="{% url 'blog:contact_add' %}"><i class="hidden-md hidden-lg fa fa-paper-plane-o" aria-hidden="true"></i> Contact</a></li>
+							</ul>
+						</div><!--/.nav-collapse -->
+					</div>
+					</nav><!-- End nav -->
 				</div>
-				<div class="collapse navbar-collapse" id="navbar">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="{% block nav_click1 %}{% endblock %}"><a href="{% url 'blog:gin_list' %}"><i class="hidden-md hidden-lg fa fa-database" aria-hidden="true"></i> GinList</a></li>
-						<li class="{% block nav_click2 %}{% endblock %}"><a href="{% url 'article:page_list' %}"><i class="hidden-md hidden-lg fa fa-tags" aria-hidden="true"></i> Blog</a></li>
-						<li class="{% block nav_click3 %}{% endblock %}"><a href="{% url 'blog:about' %}"><i class="hidden-md hidden-lg fa fa-user-circle" aria-hidden="true"></i> About</a></li>
-						<li class="{% block nav_click4 %}{% endblock %}"><a href="{% url 'blog:contact_add' %}"><i class="hidden-md hidden-lg fa fa-paper-plane-o" aria-hidden="true"></i> Contact</a></li>
-					</ul></div></div>
-				</div><!--/.nav-collapse -->
 			</div><!--container -->
-		</nav>
-			<!-- End nav -->
-
-		<!-- nav PC -->
-		<!-- End nav -->
 		<main>
 			{% block content %}
 			{% endblock %}<!-- End block content -->

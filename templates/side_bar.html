@@ -1,0 +1,16 @@
+{% load staticfiles %}
+
+<!--サイドバー-->
+<div class="col-xs-12 col-md-3 col-md-offset-0.5">
+    <div class="example">
+        <img src="{% static '/photo/banner01.jpg' %}" class="img-responsive" style="margin-top: 10px;">
+        <a href="https://www.instagram.com/yowahadas"><i class="fa fa-instagram"></i> Follow Me</a>
+    </div>
+    <div class="list-group">
+        <p>All Category</p>
+        {% for gin in gin_sort_genre %}
+            <li class="list-group-item">{{ gin.genre_name }}</li>
+        {% endfor %}
+    </div>
+</div>
+<!--サイドバー-->
