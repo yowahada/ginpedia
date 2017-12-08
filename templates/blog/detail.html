@@ -3,30 +3,41 @@
 {% block content %}
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-md-8 col-md-offset-2">
+		<div class="col-xs-12 col-md-6 col-md-offset-1">
 			<ol class="breadcrumb" style="margin: 10px 0px 5px 0px;">
 				<li><a href="{% url 'blog:post_list' %}">Home</a></li>
 				<li><a href="{% url 'blog:gin_list' %}">GinList</a></li>
 				<li class="active">{{ post.title }}</li>
 			</ol>
+		</div>
+	</div>
+</div>
+<div class="container-fluid container-page-item-title">
+    <div class="row row1">
+        <div class="col-xs-12" align="center">
 	    	<div class="inner-wrap">
+				<p style="color:#989898">{{ post.genre }}</p>
 	    		<h2>{{ post.title }}</h2>
-				<p>{{ post.Flavor_text | linebreaksbr}}</p>
+				<p style="color:#989898">{{ post.Flavor_text | linebreaksbr}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-1">
 				<p>蒸留所：{{ post.Distillery }}</p>
 				<p>度数：{{ post.ABV }} 度</p>
 				<p>国：{{ post.Country }}</p>
 				<img src="{{ post.image.url }}" style="max-width:100%; max-height:500px"/>
-			</div>
-			<div class="inner-wrap">
 				<h3>ボタニカル</h3>
 				{% for tag in post.botanicals.all %}
 				<li><a href="{% url 'blog:Material' tag.title %}"><i class="fa fa-database" aria-hidden="true"></i>{{ tag.title }}</a></li>
-				{% endfor %}
+				{% endfor %}<br>
 				<h3>詳細</h3>
-				<p>{{ post.Tasting_note | linebreaksbr}}</p>
+				<p>{{ post.Tasting_note | linebreaksbr}}</p><br>
 				<h3>ヒストリー</h3>
-				<p>{{ post.history | linebreaksbr}}</p>
-			</div>
+				<p>{{ post.history | linebreaksbr}}</p><br>
 			<div class="#" align="center" style="margin-top: 50px; padding: 20px 20px 20px;">
 				<!--{{ post.get_prev.title }}でタイトル引っ張ってこれる-->
 				{% if post.get_prev %}
@@ -37,8 +48,10 @@
 				<a class="btn btn-default" href="{% url 'blog:detail' post.get_next.pk %}">次へ <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 				</p>
 				{% endif %}
+				<hr class="hidden-md hidden-lg"><!--SPのみライン-->
 			</div>
 		</div>
+		{% include "side_bar.html" %}
 	</div>
 </div>
 {% endblock content %}
