@@ -6,8 +6,18 @@
         <img src="{% static '/photo/banner01.jpg' %}" class="img-responsive" style="margin-top: 10px;">
         <a href="https://www.instagram.com/yowahadas"><i class="fa fa-instagram"></i> Follow Me</a>
     </div>
-    <div class="list-group">
-        <p>All Category</p>
+    <div class="list-group" align="center" style="margin-top:30px;">
+        <p>ジンの基礎知識</p>
+        {% for article in recomend_article %}
+        <li class="list-group-item">
+            <a href="{% url 'article:blog_article' article.title %}">
+                {{ article.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </div>
+    <div class="list-group" align="center">
+        <p style="margin-top:30px;">All Category</p>
         {% for gin in gin_sort_genre %}
             <li class="list-group-item">{{ gin.genre_name }}</li>
         {% endfor %}

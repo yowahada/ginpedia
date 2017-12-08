@@ -101,3 +101,30 @@ h2 span::after {
     background-size: cover;
     background-position: center center;
 }
+.basic_color{
+    color: #989898;
+}
+.link01 { /*頭出し位置調整*/
+  margin-top:-100px;
+  padding-top:100px;
+}
+.links { /*頭出しリスト*/
+    color: #989898;
+    border: dotted #ddd 1px;/*ドット 色 太さ*/
+    padding: 0.5em 0.5em 0.5em 2em;
+}
+.links li{
+    line-height: 1.5;
+    padding: 0.5em 0;
+    list-style-type: none!important;
+}
+.links li a{
+    color: #989898;
+}
+.links li:before {/*疑似要素*/
+  font-family: FontAwesome;
+  content: "\f138";/*アイコンの種類*/
+  position: absolute;
+  left : 2em;/*左端からのアイコンまでの距離*/
+  color:#989898;/*アイコン色*/
+}

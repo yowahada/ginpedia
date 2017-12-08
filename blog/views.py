@@ -159,7 +159,3 @@ class GinListView(FormGinList):
 	context_object_name = "gin_list"
 	paginate_by = 8
 	ordering = '-pk'
-
-
-
-
