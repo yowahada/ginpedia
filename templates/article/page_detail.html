@@ -10,7 +10,7 @@
         <div class="col-xs-12 col-md-6 col-md-offset-1">
             <ol class="breadcrumb" style="margin: 10px 0px 5px 0px;">
 				<li><a href="{% url 'blog:post_list' %}">Home</a></li>
-				<li><a href="{% url 'article:page_list' %}">blog</a></li>
+				<li><a href="{% url 'article:page_list' %}">Topic</a></li>
 				<li class="active">article</li>
 			</ol>
         </div>
@@ -32,6 +32,7 @@
             {% autoescape off %}
             {{ page.text }}
             {% endautoescape %}
+            <hr class="hidden-md hidden-lg"><!--SPのみライン-->
         </div>
         {% include "side_bar.html" %}
     </div>
