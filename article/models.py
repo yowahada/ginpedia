@@ -19,7 +19,7 @@ class Page(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
     is_recomend = models.BooleanField(default=False)
-    is_publick = models.BooleanField(default=False)
+    is_public = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

@@ -66,9 +66,13 @@ INSTALLED_APPS = [
     'import_export',
     'widget_tweaks',
     'debug_toolbar',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'blog',
     'article',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',

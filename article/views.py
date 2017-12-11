@@ -62,7 +62,7 @@ class PageDitailView(generic.DetailView):
 
 def blog_list(request):
 	posts = Page.objects.filter(
-            is_publick=True).reverse()
+            is_public=True).reverse()
 	return render(request, 'article/blog_list.html',{
 		'posts': posts
 	})
