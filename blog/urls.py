@@ -28,8 +28,7 @@ urlpatterns = [
 
     url(r'^sitemap\.xml$',sitemap, {
         'sitemaps':sitemaps,
-        'template_name': 'custom_sitemap.xml',
-    },name='sitemap'),
+        'template_name': 'custom_sitemap.xml',},name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 """==============errorハンドラー==============
