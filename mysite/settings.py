@@ -67,7 +67,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'debug_toolbar',
     'django.contrib.sites',
-    'django.contrib.sitemaps',
+    # 'django.contrib.sitemaps',
     'blog',
     'article',
 ]
