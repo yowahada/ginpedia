@@ -26,7 +26,7 @@ class PageSitemap(Sitemap):
         return Page.objects.all()
 
     def lastmod(self, obj):
-        return obj.is_public
+        return obj.updated_at
 
     def location(self, obj):
         return reverse_lazy('article:blog_article', kwargs={'title': obj.title})
