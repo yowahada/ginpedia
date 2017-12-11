@@ -26,9 +26,8 @@ urlpatterns = [
 
     url(r'^$', views.TopListView.as_view(), name='post_list'),
 
-    url(r'^sitemap\.xml$',sitemap, {
-        'sitemaps':sitemaps,
-        'template_name': 'custom_sitemap.xml',},name='django.contrib.sitemaps.views.sitemap'),
+    url(r'^sitemap\.xml$',sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 """==============errorハンドラー==============
