@@ -27,7 +27,9 @@ urlpatterns = [
     url(r'^$', views.TopListView.as_view(), name='post_list'),
 
     url(r'^sitemap\.xml$',sitemap, {
-        'sitemaps':sitemaps},name='sitemap'),
+        'sitemaps':sitemaps,
+        'template_name': 'custom_sitemap.xml',
+    },name='sitemap'),
 ]
 
 """==============errorハンドラー==============
