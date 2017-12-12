@@ -1,5 +1,7 @@
 {% extends "blog/base.html" %}
 
+{% block meta_des %}{{post.title}} - {{ post.Tasting_note }}{% endblock %}
+
 {% block content %}
 <div class="container">
 	<div class="row">

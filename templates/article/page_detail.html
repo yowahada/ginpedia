@@ -1,7 +1,6 @@
 {% extends "article/base_blog.html" %}
 
-{% block meta_des %}{{ posts.description }}{% endblock %}
-{% block title %}{{ posts.title }} | サイト名{% endblock %}
+{% block meta_des %} {{page.title}} - {% endblock %}
 
 {% block content %}
 <!--パンくず-->
