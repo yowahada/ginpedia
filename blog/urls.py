@@ -17,7 +17,7 @@ urlpatterns = [
 
     url(r'^about/$', views.about, name='about'),
 
-    url(r'^(?P<pk>\d+)/$', views.detail, name='detail'),
+    url(r'^list/(?P<pk>\d+)/$', views.detail, name='detail'),
 
     # URLを文字に、データ引渡しを手動で行う場合
     # url(r'^material/(?P<tag>.*)/$',views.MaterialsView.as_view(),name='Material'),
