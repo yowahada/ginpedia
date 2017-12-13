@@ -3,21 +3,6 @@ from django.core.urlresolvers import reverse_lazy
 from .models import Post, Botanicals
 from article.models import Page
 
-
-class BotanicalSitemap(Sitemap):
-    changefreq = 'never'
-    priority = 0.5
-
-    def items(self):
-        return Botanicals.objects.all()
-
-    def lastmod(self, obj):
-        return obj.published_date
-
-    def location(self, obj):
-        return reverse_lazy('blog:Material', kwargs={'title': obj.title})
-
-
 class PostSitemap(Sitemap):
     changefreq = 'never'
     priority = 0.5
@@ -54,3 +39,15 @@ class StaticViewSitemap(Sitemap):
     def location(self, item):
         return reverse_lazy(item)
 
+class BotanicalSitemap(Sitemap):
+    changefreq = 'never'
+    priority = 0.5
+
+    def items(self):
+        return Botanicals.objects.all()
+
+    def lastmod(self, obj):
+        return obj.published_date
+
+    def location(self, obj):
+        return reverse_lazy('blog:Material', kwargs={'title': obj.title})
