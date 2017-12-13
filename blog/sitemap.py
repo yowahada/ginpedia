@@ -4,6 +4,19 @@ from .models import Post, Botanicals
 from article.models import Page
 
 
+class BotanicalSitemap(Sitemap):
+    changefreq = 'never'
+    priority = 0.5
+
+    def items(self):
+        return Botanicals.objects.all()
+
+    def lastmod(self, obj):
+        return obj.published_date
+
+    def location(self, obj):
+        return reverse_lazy('blog:Material', kwargs={'title': obj.title})
+
 
 class PostSitemap(Sitemap):
     changefreq = 'never'
@@ -36,7 +49,8 @@ class StaticViewSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return ['blog:post_list','blog:gin_list']
+        return ['blog:post_list','blog:gin_list','blog:about','blog:contact_add']
 
     def location(self, item):
         return reverse_lazy(item)
+
