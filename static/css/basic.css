@@ -128,3 +128,13 @@ h2 span::after {
   left : 2em;/*左端からのアイコンまでの距離*/
   color:#989898;/*アイコン色*/
 }
+.b_title_tag {
+border-bottom: dashed 1px #989898;
+/*線の種類（実線） 太さ 色*/
+}
+.b_title_var {
+padding: 0.25em 0.5em;/*上下 左右の余白*/
+color: #494949;/*文字色*/
+background: transparent;/*背景透明に*/
+border-left: solid 2px #989898;/*左線*/
+}
