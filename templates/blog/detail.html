@@ -36,7 +36,7 @@
 				<p>蒸留所：{{ post.Distillery }}</p>
 				<p>度数：{{ post.ABV }} 度</p>
 				<p>国：{{ post.Country }}</p>
-				<img src="{{ post.image.url }}" style="max-width:100%; max-height:500px"/>
+				<img src="{{ post.image.url }}" style="max-width:100%; max-height:500px; margin: 20px 0px 20px;"/>
 				<h3>ボタニカル</h3>
 				{% for obj in post.botanicals.all %}
 				<li><a href="{% url 'blog:Material' obj.title %}"><i class="fa fa-database" aria-hidden="true"></i>{{ obj.title }}</a></li>
