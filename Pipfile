@@ -9,7 +9,7 @@ name = "pypi"
 
 diff-match-patch = "==20121119"
 dj-database-url = "==0.4.2"
-django = "==1.11"
+django = "==1.11.28"
 django-import-export = "==0.5.1"
 et-xmlfile = "==1.0.1"
 gunicorn = "==19.7.1"
